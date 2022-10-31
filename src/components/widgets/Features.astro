@@ -3,34 +3,28 @@ import { Icon } from 'astro-icon';
 
 const items = [
 	{
-		title: 'Headers',
+		title: 'Explore Sleep',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:home',
+			'For railroaders, good sleep improves safety and health, both on and off the job. Learn what helps or harms the quality and quantity of your sleep. Discover your daily patterns of alertness and sleepiness. Find out if it’s time to talk to your healthcare provider about your sleep.',
+		icon: 'fa:search',
 	},
 	{
-		title: 'Footers',
+		title: 'Improve Sleep',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:faq',
+			'Smart sleep strategies can help you perform your job safely, enjoy family and community life, see friends, and even squeeze in sports or other leisure activities. ',
+		icon: 'icon-park-outline:sleep-one',
 	},
 	{
-		title: 'Features',
+		title: 'Balance Work and Life',
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:video-projector',
+			'It is a challenge to balance work and life while working unpredictable hours. Railroaders work in a 24/7 world and are called to perform their duties day and night, with little notice. The industry may never sleep, but railroad employees need sleep to perform safely and meet operational expectations.',
+		icon: 'fa-solid:balance-scale-left',
 	},
 	{
 		title: 'Call-to-Action',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
 		icon: 'flat-color-icons:video-projector',
-	},
-	{
-		title: 'Pricing',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:calculator',
 	},
 	{
 		title: 'Testimonial',
@@ -45,6 +39,8 @@ const items = [
 	<div class="absolute inset-0 bg-primary-50 dark:bg-slate-800 pointer-events-none mb-32" aria-hidden="true"></div>
 	<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
 		<div class="py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
+    <!--
+
 			<div class="mb-8 text-center">
 				<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase">Components</p>
 				<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
@@ -54,6 +50,7 @@ const items = [
 					Provides frequently used components for building websites using Tailwind CSS
 				</p>
 			</div>
+    -->
 			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12 dark:text-white">
 				{
 					items.map(({ title, description, icon }) => (

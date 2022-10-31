@@ -1,7 +1,7 @@
 {
-  "name": "@onwidget/astrowind",
-  "description": "A template to make your website using Astro + Tailwind CSS.",
-  "version": "0.4.1",
+  "name": "@tayhimself/railroadersleep",
+  "description": "RailRoaderSleep.org is a website for the Railroader Sleep Foundation, a non-profit organization dedicated to helping railroaders get a good night's sleep.",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -43,5 +43,9 @@
   },
   "engines": {
     "node": "^14.15.0 || >=16.0.0"
+  },
+  "dependencies": {
+    "@astro-community/astro-embed-youtube": "^0.2.1",
+    "rollup": "^3.2.3"
   }
 }
