@@ -20,18 +20,6 @@ const items = [
 			'It is a challenge to balance work and life while working unpredictable hours. Railroaders work in a 24/7 world and are called to perform their duties day and night, with little notice. The industry may never sleep, but railroad employees need sleep to perform safely and meet operational expectations.',
 		icon: 'fa-solid:balance-scale-left',
 	},
-	{
-		title: 'Call-to-Action',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:video-projector',
-	},
-	{
-		title: 'Testimonial',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.',
-		icon: 'flat-color-icons:voice-presentation',
-	},
 ];
 ---
 
@@ -54,7 +42,7 @@ const items = [
 			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12 dark:text-white">
 				{
 					items.map(({ title, description, icon }) => (
-						<div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-slate-800">
+						<div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-slate-800 items-stretch h-full">
 							<div class="flex items-center mb-4">
 								<Icon name={icon} class="w-12 h-12" />
 
