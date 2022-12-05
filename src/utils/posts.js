@@ -26,6 +26,7 @@ const getNormalizedPost = async (post) => {
 
     video_url: frontmatter.video_url,
     video_title: frontmatter.video_title,
+    video_description: frontmatter.video_description,
     quote: frontmatter.quote,
     quote_author: frontmatter.quote_author,
 	};

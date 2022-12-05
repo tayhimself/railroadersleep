@@ -1,0 +1,35 @@
+---
+import { SITE, BLOG } from '~/config.mjs';
+
+import Layout from '~/layouts/BlogLayout.astro';
+
+import Carousel from '~/components/blog/Carousel.astro';
+
+import { fetchPosts } from '~/utils/posts';
+import { getCanonical, getPermalink, cleanSlug, TAG_BASE } from '~/utils/permalinks';
+
+
+	const posts = await fetchPosts();
+
+	const categories = new Set();
+  categories.add('Explore Sleep');
+	const category = 'Explore Sleep';
+
+
+	const filteredposts =	posts.filter((post) => post.category == 'Explore Sleep')
+const { page } = Astro.props;
+
+
+const meta = {
+	title: `Posts by tag '${category}'} ${SITE.name}`,
+	description: SITE.description,
+	noindex: true
+};
+---
+
+<Layout meta={meta}>
+	<Fragment slot="title">
+    {category}
+	</Fragment>
+	<Carousel posts={filteredposts} />
+</Layout>

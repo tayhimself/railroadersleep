@@ -13,11 +13,11 @@ export const SITE = {
 
 export const BLOG = {
 	disabled: false,
-	postsPerPage: 4,
+	postsPerPage: 8,
 
 	blog: {
 		disabled: false,
-		pathname: 'blog', // blog main path, you can change this to "articles" (/articles)
+		pathname: 'articles', // blog main path, you can change this to "articles" (/articles)
 	},
 
 	post: {

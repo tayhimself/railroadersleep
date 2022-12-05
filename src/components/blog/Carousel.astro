@@ -1,0 +1,96 @@
+---
+import Item from "~/components/blog/ListItem.astro";
+
+const { posts } = Astro.props;
+---
+
+<!-- Slider main container -->
+<div class="swiper">
+	<!-- Additional required wrapper -->
+	<div class="swiper-wrapper">
+		<!-- Slides -->
+		{
+			posts.map((post) => (
+				<div class="swiper-slide">
+					<Item post={post} />
+				</div>
+			))
+		}
+		...
+	</div>
+	<!-- If we need pagination -->
+	<div class="swiper-pagination"></div>
+
+	<!-- If we need navigation buttons -->
+	<div class="swiper-button-prev"></div>
+	<div class="swiper-button-next"></div>
+
+
+</div>
+
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+<script type="module">
+	import Swiper from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
+
+	// Create a media condition that targets viewports at least 768px wide
+	const mediaQuery = window.matchMedia("(min-height: 1080px)");
+	// Check if the media query is true
+  const slidesPerView = mediaQuery.matches ? 2 : 1;
+
+	const swiper = new Swiper(".swiper", {
+		// Optional parameters
+		direction: "horizontal",
+		loop: true,
+    slidesPerView: 1,
+
+		// If we need pagination
+		pagination: {
+			el: ".swiper-pagination",
+		},
+
+		// Navigation arrows
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		}
+	});
+</script>
+
+<style>
+	.swiper {
+		width: 480px;
+	}
+
+	@media screen and (min-width: 640px) {
+		.swiper {
+			width: 640px;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		.swiper {
+			width: 768px;
+		}
+	}
+
+	.swiper-slide .title {
+		position: absolute;
+		top: 250px;
+		left: 10px;
+		color: white;
+		font-weight: bold;
+		font-size: 12pt;
+		font-family: "Mark Bold" !important;
+	}
+	.swiper-slide .subtitle {
+		position: absolute;
+		top: 275px;
+		left: 20px;
+		color: white;
+		font-size: 10pt;
+	}
+</style>
