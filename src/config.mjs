@@ -5,7 +5,7 @@ export const SITE = {
 	basePathname: '/',
 
 	title: 'Railroader Sleep Beta',
-	description: '	🚆 RailoraderSleep is a web app that helps you get a good night’s sleep. 🛌',
+	description: '	🚆 RailroaderSleep is a web app that helps you get a good night’s sleep. 🛌',
 
   googleAnalyticsId: false, // or "G-XXXXXXXXXX",
 	googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
