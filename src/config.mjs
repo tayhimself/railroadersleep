@@ -1,28 +1,28 @@
 export const SITE = {
-	name: 'AstroWind',
+	name: 'RailroaderSleep',
 
-	origin: 'https://astrowind.vercel.app',
+	origin: 'https://railroadersleep.fra.dot.gov',
 	basePathname: '/',
 
-	title: 'AstroWind — Your website with Astro + Tailwind CSS',
-	description: '🚀 AstroWind is a free and ready to start template to make your website using Astro and Tailwind CSS.',
+	title: 'Railroader Sleep Beta',
+	description: '	🚆 RailroaderSleep is a web app that helps you get a good night’s sleep. 🛌',
 
-	googleAnalyticsId: false, // or "G-XXXXXXXXXX",
+  googleAnalyticsId: false, // or "G-XXXXXXXXXX",
 	googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
 };
 
 export const BLOG = {
 	disabled: false,
-	postsPerPage: 4,
+	postsPerPage: 8,
 
 	blog: {
 		disabled: false,
-		pathname: 'blog', // blog main path, you can change this to "articles" (/articles)
+		pathname: 'articles', // blog main path, you can change this to "articles" (/articles)
 	},
 
 	post: {
 		disabled: false,
-		pathname: '', // empty for /some-post, value for /pathname/some-post 
+		pathname: '', // empty for /some-post, value for /pathname/some-post
 	},
 
 	category: {

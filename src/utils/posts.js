@@ -23,6 +23,12 @@ const getNormalizedPost = async (post) => {
 		category: frontmatter.category,
 		tags: frontmatter.tags,
 		readingTime: frontmatter.readingTime,
+
+    video_url: frontmatter.video_url,
+    video_title: frontmatter.video_title,
+    video_description: frontmatter.video_description,
+    quote: frontmatter.quote,
+    quote_author: frontmatter.quote_author,
 	};
 };
 
