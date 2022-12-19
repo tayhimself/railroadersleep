@@ -11,12 +11,12 @@ import { fetchPosts } from "~/utils/posts";
 const posts = await fetchPosts();
 
 const categories = new Set();
-categories.add("Explore Sleep");
-const category = "Explore Sleep";
+categories.add("Body Clock");
+const category = "Body Clock";
 
-const filteredposts = posts.filter((post) => post.category == "Explore Sleep");
-import * as mainPost from '../../data/blog/tips.mdx'
-import {Content as MainPost} from '../../data/blog/tips.mdx'
+const filteredposts = posts.filter((post) => post.category == "Body Clock");
+import * as mainPost from '../../data/blog/body-clock.mdx'
+import {Content as MainPost} from '../../data/blog/body-clock.mdx'
 const meta = {
 	title: `Posts by tag '${category}'} ${SITE.name}`,
 	description: SITE.description,
