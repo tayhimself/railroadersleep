@@ -8,6 +8,10 @@
 	}
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 [astro-icon] > * {
 	stroke-width: 1.5;
 }
