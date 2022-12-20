@@ -1,11 +1,15 @@
 ---
 import Item from "~/components/blog/ListItem.astro";
 
-const { posts } = Astro.props;
+const { posts, category } = Astro.props;
 ---
-
+<div class="px-6 max-w-4xl mx-auto">
+  <h2 class="text-center text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-8 mt-8 font-heading">{category.category}</h2>
+  <p class="mb-4">{category.description}</p>
+</div>
 <!-- Slider main container -->
-<div class="swiper">
+<div class="swiper mb-8">
+
 	<!-- Additional required wrapper -->
 	<div class="swiper-wrapper">
 		<!-- Slides -->
@@ -24,8 +28,6 @@ const { posts } = Astro.props;
 	<!-- If we need navigation buttons -->
 	<div class="swiper-button-prev"></div>
 	<div class="swiper-button-next"></div>
-
-
 </div>
 
 <link
@@ -39,24 +41,27 @@ const { posts } = Astro.props;
 	// Create a media condition that targets viewports at least 768px wide
 	const mediaQuery = window.matchMedia("(min-height: 1080px)");
 	// Check if the media query is true
-  const slidesPerView = mediaQuery.matches ? 2 : 1;
+	const slidesPerView = mediaQuery.matches ? 2 : 1;
 
 	const swiper = new Swiper(".swiper", {
 		// Optional parameters
 		direction: "horizontal",
 		loop: true,
-    slidesPerView: 1,
+		slidesPerView: 1,
 
 		// If we need pagination
 		pagination: {
 			el: ".swiper-pagination",
 		},
-
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: true,
+		},
 		// Navigation arrows
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
-		}
+		},
 	});
 </script>
 

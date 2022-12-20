@@ -29,6 +29,8 @@ const getNormalizedPost = async (post) => {
     video_description: frontmatter.video_description,
     quote: frontmatter.quote,
     quote_author: frontmatter.quote_author,
+    category: frontmatter.category,
+    section: frontmatter.section,
 	};
 };
 
@@ -56,6 +58,26 @@ export const fetchPosts = async () => {
 
 	return await _posts;
 };
+
+
+/**
+ * @param {string} section name
+*/
+export const fetchCategories = async (section) => {
+  const categories = import.meta.glob(['~/../data/categories/**/*.md', '~/../data/categories/**/*.mdx'], {
+    eager: true,
+  });
+  const normalizedCategories = Object.keys(categories).map(async (key) => {
+    const category = await categories[key];
+    return await getNormalizedPost(category);
+  });
+  // now filter out the ones that don't have a category after normalization
+  const results = (await Promise.all(normalizedCategories))
+    .filter((post) => post.category)
+    .filter((post) => post.section === section);
+  return await results;
+};
+
 
 /** */
 export const findPostsByIds = async (ids) => {
