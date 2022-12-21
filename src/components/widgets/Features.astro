@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
+import { getPermalink } from '~/utils/permalinks';
 
 const items = [
 	{
@@ -7,18 +8,21 @@ const items = [
 		description:
 			'For railroaders, good sleep improves safety and health, both on and off the job. Learn what helps or harms the quality and quantity of your sleep. Discover your daily patterns of alertness and sleepiness. Find out if it’s time to talk to your healthcare provider about your sleep.',
 		icon: 'fa:search',
+    link: 'explore-sleep',
 	},
 	{
 		title: 'Improve Sleep',
 		description:
 			'Smart sleep strategies can help you perform your job safely, enjoy family and community life, see friends, and even squeeze in sports or other leisure activities. ',
 		icon: 'icon-park-outline:sleep-one',
+    link: 'explore-sleep',
 	},
 	{
 		title: 'Balance Work and Life',
 		description:
 			'It is a challenge to balance work and life while working unpredictable hours. Railroaders work in a 24/7 world and are called to perform their duties day and night, with little notice. The industry may never sleep, but railroad employees need sleep to perform safely and meet operational expectations.',
 		icon: 'fa-solid:balance-scale-left',
+    link: 'explore-sleep',
 	},
 ];
 ---
@@ -41,13 +45,13 @@ const items = [
     -->
 			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12 dark:text-white">
 				{
-					items.map(({ title, description, icon }) => (
+					items.map(({ title, description, icon, link }) => (
 						<div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-slate-800 items-stretch h-full">
-							<div class="flex items-center mb-4">
+							<a href={getPermalink(link)} class="flex items-center mb-4">
 								<Icon name={icon} class="w-12 h-12" />
 
 								<div class="ml-4 text-xl font-bold">{title}</div>
-							</div>
+							</a>
 							<p class="text-gray-500 dark:text-gray-400 text-md">{description}</p>
 						</div>
 					))
