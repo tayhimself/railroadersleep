@@ -1,0 +1,17 @@
+---
+const { embed_url } = Astro.props;
+---
+
+<div
+	class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-80 lg:pb-[56.25%] overflow-hidden rounded shadow-lg"
+>
+	<div class="mb-6 rounded h-full w-full">
+		<div class="aspect-w-16 aspect-h-9">
+			<iframe
+				class="absolute w-full h-full"
+				src={embed_url}
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			></iframe>
+		</div>
+	</div>
+</div>
