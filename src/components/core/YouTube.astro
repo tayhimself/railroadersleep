@@ -1,12 +1,12 @@
 ---
-const { embed_url } = Astro.props;
+const { embed_url, title, duration, description } = Astro.props;
 ---
 
 <div
-	class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-80 lg:pb-[56.25%] overflow-hidden rounded shadow-lg"
+	class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-80 lg:pb-[56.25%] overflow-hidden"
 >
-	<div class="mb-6 rounded h-full w-full">
-		<div class="aspect-w-16 aspect-h-9">
+	<div class="mb-4 h-full w-full">
+		<div class="aspect-w-16 aspect-h-9 my-auto">
 			<iframe
 				class="absolute w-full h-full"
 				src={embed_url}
@@ -14,4 +14,9 @@ const { embed_url } = Astro.props;
 			></iframe>
 		</div>
 	</div>
+
+</div>
+<div class="w-full h-1/2">
+  <div class="font-semibold inline-block">{title}</div> <div class="inline-block text-sm text-opacity-75">({duration})</div>
+  <div class="text-opacity-75">{description}</div>
 </div>

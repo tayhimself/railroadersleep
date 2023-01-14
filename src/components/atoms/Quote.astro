@@ -4,11 +4,13 @@ const { quote, quote_author, class: className = "text-sm" } = Astro.props;
 
 {
 	quote && quote_author && (
-		<div class="bg-gray-100 dark:bg-slate-700 px-6">
-			<p class="leading-relaxed mt-0 mb-0 text-gray-800 dark:text-gray-200">"{quote}"</p>
-			<footer class="text-base font-light text-right block text-gray-600 dark:text-gray-200">
-				{quote_author}
-			</footer>
-		</div>
+  <figure>
+  <blockquote class="-mb-8 -pb-4">
+    <p class="text-lg">{quote}</p>
+  </blockquote>
+  <div class="text-base text-right -mt-4">
+    - {quote_author}
+  </div>
+</figure>
 	)
 }
