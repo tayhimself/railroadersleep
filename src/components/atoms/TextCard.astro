@@ -1,0 +1,10 @@
+---
+const { class: cardColor } = Astro.props;
+// Basic text card component for use in markdown files
+---
+
+  <div class={cardColor}>
+		<div class="text-base font-mono italic font-light">
+      <slot />
+    </div>
+	</div>
