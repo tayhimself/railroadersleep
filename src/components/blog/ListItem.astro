@@ -29,7 +29,7 @@ const image = await findImage(post.image);
       }
     {!image && post.video_url &&
       <div class=" mb-6 rounded h-full w-full">
-        <div class="aspect-w-16 aspect-h-9">
+        <div class="aspect-video">
           <iframe class="absolute w-full h-full"
             src={post.video_url}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
