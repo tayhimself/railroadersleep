@@ -14,10 +14,7 @@ module.exports = {
 			},
 		},
 	},
-  corePlugins: {
-    aspectRatio: false,
-  },
-	plugins: [require('@tailwindcss/typography', '@tailwindcss/aspect-ratio')],
+	plugins: [require('@tailwindcss/typography')],
 	darkMode: 'class',
 };
 
