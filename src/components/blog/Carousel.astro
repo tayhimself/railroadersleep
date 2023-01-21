@@ -4,7 +4,7 @@ import Item from "~/components/blog/ListItem.astro";
 const { posts, category } = Astro.props;
 ---
 <div class="px-6 max-w-4xl mx-auto">
-  <h2 class="text-center text-3xl md:text-4xl font-bold leading-tighter tracking-tighter mb-8 mt-8 font-heading">{category.category}</h2>
+  <h2 class="text-center text-2xl md:text-4xl font-bold leading-tighter tracking-tighter mb-8 mt-8 font-heading">{category.category}</h2>
   <p class="mb-4">{category.description}</p>
 </div>
 <!-- Slider main container -->
@@ -20,7 +20,6 @@ const { posts, category } = Astro.props;
 				</div>
 			))
 		}
-		...
 	</div>
 	<!-- If we need pagination -->
 	<div class="swiper-pagination"></div>
