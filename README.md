@@ -4,10 +4,13 @@
 <summary>Table of Contents</summary>
 
 - [Railroader Sleep](#railroader-sleep)
+  - [Purpose](#purpose)
   - [Getting started](#getting-started)
     - [Project structure](#project-structure)
     - [Commands](#commands)
     - [Configuration](#configuration)
+    - [Testing](#testing)
+      - [Playwright](#playwright)
     - [Deploy](#deploy)
       - [Deploy to production (manual)](#deploy-to-production-manual)
   - [Acknowledgements](#acknowledgements)
@@ -15,6 +18,12 @@
 </details>
 
 <br>
+
+## Purpose
+
+A sample view for the [railroadersleep](https://railroadersleep.fra.dot.gov/improve/overview) FRA site. Inspiration is below.
+- https://www.volpe.dot.gov
+- https://media.hopper.com
 
 
 ## Getting started
@@ -61,7 +70,6 @@
 |   |   |       └── [...page].astro
 │   |   ├── index.astro
 |   |   ├── 404.astro
-|   |   └-- rss.xml.js
 │   ├── utils/
 │   └── config.mjs
 ├── package.json
@@ -84,10 +92,10 @@ All commands are run from the root of the project, from a terminal:
 
 | Command           | Action                                       |
 | :---------------- | :------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
+| `pnpm install`     | Installs dependencies                        |
+| `pnpm run dev`     | Starts local dev server at `localhost:3000`  |
+| `pnpm run build`   | Build your production site to `./dist/`      |
+| `pnpm run preview` | Preview your build locally, before deploying |
 
 <br>
 
@@ -139,6 +147,39 @@ export const BLOG = {
 
 <br>
 
+### Testing
+#### Playwright
+Install using  `pnpm dlx create-playwright`
+
+  pnpm dlx playwright test
+    Runs the end-to-end tests.
+
+  pnpm dlx playwright test --project=chromium
+    Runs the tests only on Desktop Chrome.
+
+  pnpm dlx playwright test example
+    Runs the tests in a specific file.
+
+  pnpm dlx playwright test --debug
+    Runs the tests in debug mode.
+
+  pnpm dlx playwright codegen
+    Auto generate tests with Codegen.
+
+Review the report using`pnpm dlx playwright show-report`
+
+
+We suggest that you begin by typing:
+
+    pnpm dlx playwright test
+
+And check out the following files:
+  - ./tests/example.spec.ts - Example end-to-end test
+  - ./tests-examples/demo-todo-app.spec.ts - Demo Todo App end-to-end tests
+  - ./playwright.config.ts - Playwright Test configuration
+
+Visit https://playwright.dev/docs/intro for more information. ✨
+
 ### Deploy
 
 #### Deploy to production (manual)
@@ -146,7 +187,7 @@ export const BLOG = {
 You can create an optimized production build with:
 
 ```shell
-npm run build
+pnpm run build
 ```
 
 Now, your website is ready to be deployed. All generated files are located at
