@@ -14,9 +14,7 @@ const section = "Balance";
 //const categories = new Set(["How Sleep Works", "Body Clock"]);
 const readCategories = await fetchCategories(section);
 const categoryNames = new Set(readCategories.map((category) => category.category));
-console.log(categoryNames, posts);
 const filteredposts = posts.filter((post) => categoryNames.has(post.category));
-console.log('filtered:' + filteredposts);
 const postsbycategory = filteredposts.reduce((acc, post) => {
   acc[post.category] = acc[post.category] || [];
   acc[post.category].push(post);

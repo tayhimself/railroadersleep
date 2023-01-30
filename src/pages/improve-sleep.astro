@@ -13,16 +13,13 @@ const posts = await fetchPosts();
 const section = "Improve Sleep";
 const readCategories = await fetchCategories(section);
 const categoryNames = new Set(readCategories.map((category) => category.category));
-//console.log(categoryNames, readCategories);
 const filteredposts = posts.filter((post) => categoryNames.has(post.category));
-//console.log(filteredposts);
 const postsbycategory = filteredposts.reduce((acc, post) => {
   acc[post.category] = acc[post.category] || [];
   acc[post.category].push(post);
   return acc;
 }, {});
 
-console.log(postsbycategory);
 
 //import * as mainPost from '../../data/blog/tips.mdx'
 import {Content as MainPost} from '../../data/categories/improve-sleep.mdx'
