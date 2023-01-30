@@ -1,0 +1,17 @@
+---
+import { Icon } from "astro-icon";
+
+ const { class: className } = Astro.props;
+ ---
+ <div class="flex flex-row content-evenly my-4">
+    <button id="previous-page" class="btn text-white bg-primary-600 hover:bg-primary-800 mx-auto">
+      <Icon name="tabler:arrow-left" class="mr-2 w-5 h-5" />Previous Page
+    </button>
+ </div>
+
+ <script>
+   // go to previous page on click
+   document.getElementById("previous-page").addEventListener("click", function() {
+     window.history.back();
+   });
+ </script>

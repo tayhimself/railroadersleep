@@ -3,6 +3,7 @@ import Picture from "~/components/core/Picture.astro";
 import PostTags from "~/components/atoms/Tags.astro";
 import Quote from "~/components/atoms/Quote.astro";
 import { getFormattedDate } from "~/utils/utils";
+import Previous from "../atoms/Previous.astro";
 
 const { post } = Astro.props;
 ---
@@ -58,4 +59,5 @@ const { post } = Astro.props;
 			<PostTags tags={post.tags} />
 		</div>
 	</article>
+  <Previous />
 </section>
