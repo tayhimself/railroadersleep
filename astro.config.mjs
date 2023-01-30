@@ -34,7 +34,7 @@ export default defineConfig({
 		image({
 			serviceEntryPoint: '@astrojs/image/sharp'
 		}),
-		mdx({ remarkPlugins: [remarkReadingTime],}),
+		mdx({}),
 
 		/* Disable this integration if you don't use Google Analytics (or other external script). */
 		partytown({
