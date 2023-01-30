@@ -1,8 +1,8 @@
 export const SITE = {
 	name: 'RailroaderSleep',
 
-	origin: 'https://railroadersleep.fra.dot.gov',
-	basePathname: '/',
+	origin: 'https://railroadersleep.netlify.app/',
+	basePathname: '',
 
 	title: 'Railroader Sleep Beta',
 	description: '	🚆 RailroaderSleep is a web app that helps you get a good night’s sleep. 🛌',

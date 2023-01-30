@@ -107,8 +107,8 @@ Basic configuration file: `./src/config.mjs`
 export const SITE = {
   name: "Example",
 
-  origin: "https://example.com",
-  basePathname: "/", // Change this if you need to deploy to Github Pages, for example
+  origin: "https://railroadersleep.netlify.app/",
+  basePathname: "", // Change this if you need to deploy to Github Pages, for example
 
   title: "Example - This is the homepage title of Example",
   description: "This is the homepage description of Example",

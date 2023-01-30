@@ -22,6 +22,7 @@ export default defineConfig({
 	base: SITE.basePathname,
 
 	output: 'static',
+  markdown: { remarkPlugins: [remarkReadingTime],},
 
 	integrations: [
 		tailwind({
@@ -33,7 +34,7 @@ export default defineConfig({
 		image({
 			serviceEntryPoint: '@astrojs/image/sharp'
 		}),
-		mdx(),
+		mdx({ remarkPlugins: [remarkReadingTime],}),
 
 		/* Disable this integration if you don't use Google Analytics (or other external script). */
 		partytown({
@@ -41,10 +42,6 @@ export default defineConfig({
 		}),
 	],
 
-	markdown: {
-    remarkPlugins: [remarkReadingTime],
-    extendDefaultPlugins: true,
-  },
 
 	vite: {
 		resolve: {
