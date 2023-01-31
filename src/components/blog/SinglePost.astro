@@ -4,6 +4,7 @@ import PostTags from "~/components/atoms/Tags.astro";
 import Quote from "~/components/atoms/Quote.astro";
 import { getFormattedDate } from "~/utils/utils";
 import Previous from "../atoms/Previous.astro";
+import YouTube from "../core/YouTube.astro";
 
 const { post } = Astro.props;
 ---
@@ -22,7 +23,7 @@ const { post } = Astro.props;
 				> ~ {Math.ceil(post.readingTime)} min read
 			</p>
 			{
-				post.image && (
+				!post.video_url && post.image && (
 					<Picture
 						src={post.image}
 						class="max-w-full lg:max-w-6xl mx-auto mt-4 mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
@@ -34,18 +35,10 @@ const { post } = Astro.props;
 				)
 			}
 			{
-				!post.image && post.video_url && (
+				post.video_url && (
 					<div class="container mx-auto px-8 sm:px-6 max-w-5xl mt-8">
-						<div class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-80 lg:pb-[56.25%] overflow-hidden aspect-video">
-							<div class="relative" style="padding-top: 56.25%">
-								<iframe
-									src={post.video_url}
-									class="absolute inset-0 w-full h-full"
-									frameborder="0"
-								/>
-							</div>
+                <YouTube embed_url={post.video_url} title={post.video_title} duration={post.video_duration} description={post.video_description} />
 						</div>
-					</div>
 				)
 			}
 		</header>
