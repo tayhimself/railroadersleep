@@ -1,26 +1,16 @@
 ---
 publishDate: "Nov 14 2022"
-title: "Sleep myths debunked"
+title: "Why Better Sleep = Better Health"
 description: "People who frequently short-change themselves on sleep forget how great it feels to be well-rested. They get used to feeling tired all the time and try to convince themselves that they can manage just fine. They often cling to sleep myths."
-video_url: "https://www.youtube.com/embed/W0-mMm0R5fY"
-video_title: "Sleep and Health (0:36)"
+video_url: "https://player.vimeo.com/video/579922360?h=07bb54b759"
+video_title: "Sleep and Health"
+video_duration: 00:36
 video_description: "Orfeu Buxton, PhD, formerly of Harvard, describes how animal and human studies suggest that adequate sleep is crucial for a long and healthy life."
 category: "How Sleep Works"
 tags: ["health", "education", "sleep"]
 ---
-export const title = 'My first MDX post'
-export const videos= [
-  {
-    "url": "https://www.youtube.com/embed/BdLSPfOGuE0",
-    "title": "Sleep Deprivation and Cardiovascular Risk (0:30)",
-    "description": "Janet Mullington, PhD, of Harvard, tells how sleep deprivation increases the risk of heart and blood vessel disease."
-  },
-  {
-    "url": "https://www.youtube.com/embed/3i9c4aiU2KA",
-    "title": "Sleep Deprivation, Weight Gain, and Diabetes (1:00)",
-    "description": "Ann E. Rogers, PhD, RN, of the University of Pennsylvania School of Nursing, discusses sleep deprivation, weight gain, and diabetes."
-  }
-]
+import YouTube from '~/components/core/YouTube.astro'
+
 
 Often, railroaders are not able to get as much sleep as they need or want, and some may even pride themselves on getting by with as little sleep as they can. Sleep serves a vital function, however. It benefits overall health, quality of life, and longevity. Adults who average less than seven hours of sleep per day have a higher risk of developing serious medical disorders than those who sleep seven hours or more.
 
@@ -42,18 +32,6 @@ Heart and blood vessel disease, and high blood pressure: Researchers found the r
 
 **Life expectancy:** Getting sufficient sleep helps people live a full life. Studies show that people who average seven to eight hours' sleep per day have a lower risk of early death than those averaging five hours or less per day. Railroaders and others who often get variable amounts of sleep from day to day can optimize the amount and quality of their sleep by adopting sleep practices described throughout this website.
 
-  <>
-  {videos.map((video) => (
-      <div class=" mb-6 rounded h-full w-full">
-        <div class="aspect-video">
-          <iframe class="absolute w-full h-full"
-            src={video.url}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          ></iframe>
-        </div>
-      </div>
+<YouTube embed_url= "https://player.vimeo.com/video/579922492?h=a13848dae7" title="Sleep Deprivation and Cardiovascular Risk" duration="0:30" description="Janet Mullington, PhD, of Harvard, tells how sleep deprivation increases the risk of heart and blood vessel disease." />
 
-
-      ))
-      }
-  </>
+<YouTube embed_url= "https://player.vimeo.com/video/600222055?h=f60d74e1b5" title="Sleep Deprivation, Weight Gain, and Diabetes" duration="1:00" description="Ann E. Rogers, PhD, RN, of the University of Pennsylvania School of Nursing, discusses sleep deprivation, weight gain, and diabetes." />

@@ -4,12 +4,13 @@ title: "Find a Sleep Health Center"
 description: "Your healthcare provider may suggest that you see a sleep specialist, and refer you to a sleep center in your area."
 image: "~/assets/images/sleep-health-center.jpeg"
 image_alt: "Sleep evaluation"
+video_url: "https://player.vimeo.com/video/586847584?h=a724fd4786"
 category: "Seek Help"
 tags: ["sleep disorders"]
 ---
 import YouTube from '~/components/core/YouTube.astro'
 
-<YouTube embed_url="https://www.youtube.com/embed/fhLahTXf6O8" title="What to Expect from a Sleep Evaluation" duration="1:39" description="Lawrence Epstein, MD, of Harvard tells what to expect from a visit to a sleep specialist." />
+<YouTube embed_url={frontmatter.video_url} title="What to Expect from a Sleep Evaluation" duration="1:39" description="Lawrence Epstein, MD, of Harvard tells what to expect from a visit to a sleep specialist." />
 
 If you do everything you can to foster good sleep, but still don’t get as much sleep as you need, or don’t feel rested when you awaken, you may have a sleep disorder or another health problem that causes these difficulties. Treatment can help you sleep better, and feel better, too.
 
