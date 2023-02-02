@@ -1,41 +1,30 @@
 ---
 import { Icon } from 'astro-icon';
-import Picture from '~/components/core/Picture.astro';
+import {Image, Picture} from '@astrojs/image/components';
 ---
 
 <section>
-	<div class="max-w-6xl mx-auto px-4 sm:px-6">
+	<div class="mx-auto">
 		<div class="py-12 md:py-20">
-			<div class="text-center pb-10 md:pb-16">
+			<div class="text-center pb-10 md:pb-16 px-8 sm:px-4">
 				<h1 class="text-5xl md:text-[3.50rem] font-bold leading-tighter tracking-tighter mb-4 font-heading">
           Why does Sleep Matter?
 				</h1>
 				<div class="max-w-3xl mx-auto">
-					<p class="text-lg text-gray-600 mb-8 dark:text-slate-400">
+					<p class="text-lg text-gray-600 mb-4 dark:text-slate-400">
             Learn how sleep affects your health,
             how you function, and how you feel.
 					</p>
-					<div class="max-w-none px-6 flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
-						<div class="flex w-full sm:w-auto">
-							<a
-								class="btn text-white border border-primary-600 bg-primary-600 hover:bg-primary-800 hover:border-primary-800 sm:mb-0 w-full"
-								href="/explore-sleep"
-							>
-								Explore Sleep <Icon name="tabler:arrow-right" class="w-5 h-5 ml-1 -mr-1.5" />
-							</a>
-						</div>
-					</div>
 				</div>
 			</div>
 			<div>
-				<div class="relative mb-8 m-auto max-w-3xl">
+				<div class="mb-8 m-auto max-h-96">
 					<Picture
-						src={import('~/assets/images/hero-1.jpg')}
-						class="mx-auto rounded-md shadow-lg bg-gray-400 dark:bg-slate-700 w-full"
-						widths={[400, 768]}
-						sizes=" (max-width: 767px) 400px, 768px"
+						src={import('~/assets/images/hero-2.jpg')}
+						class=" bg-gray-400 dark:bg-slate-700 w-full object-cover"
+						widths={[900, 1200, 1600]}
+						sizes=" (max-width: 1600px) 900px, 1200px, 1600px"
 						alt="Hero Image"
-						aspectRatio="21:9"
 					/>
 				</div>
 			</div>
