@@ -5,7 +5,7 @@ export const SITE = {
 	basePathname: '',
 
 	title: 'Railroader Sleep Beta',
-	description: '	🚆 RailroaderSleep is a web app that helps you get a good night’s sleep. 🛌',
+	description: 'The Railroaders’ Guide to Healthy Sleep is an educational initiative for railroad workers about the importance of sleep health.',
 
   googleAnalyticsId: false, // or "G-XXXXXXXXXX",
 	googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',

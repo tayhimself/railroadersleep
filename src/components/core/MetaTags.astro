@@ -2,59 +2,63 @@
 import { getImage } from '@astrojs/image';
 import { getRelativeUrlByFilePath } from '~/utils/directories';
 
-import defaultImageSrc from '~/assets/images/default.png';
 
 import { SITE } from '~/config.mjs';
 import { SEO } from "astro-seo";
 import Fonts from '../atoms/Fonts.astro';
 import ExtraMetaTags from '../atoms/ExtraMetaTags.astro';
 
-const { src: defaultImage } = await getImage({
-	src: '~/assets/images/hero-2.jpeg',
-	width: 1200,
-	height: 628,
-});
 
+const ogImage = await getImage({
+	src: import('~/assets/images/hero-2.jpg'),
+	width: 600,
+	height: 314,
+  alt: SITE.description,
+});
+console.log(ogImage);
 const {
 	title = SITE.name,
-	description = '',
-	image: _image = defaultImage,
+	description = SITE.description,
+	image: _image = ogImage.src,
 
-	canonical,
-	noindex = false,
-	nofollow = false,
-
+	noindex = true,
+	nofollow = true,
 	ogTitle = title,
-	ogType = 'website',
 } = Astro.props;
-
 const image =
-	typeof _image === 'string'
-		? new URL(_image, Astro.site)
-		: _image && typeof _image['src'] !== 'undefined'
-		? new URL(getRelativeUrlByFilePath(_image.src), Astro.site)
-		: null;
+  typeof _image === 'string'
+    ? new URL(_image, Astro.site)
+    : _image && typeof _image['src'] !== 'undefined'
+    ? // @ts-ignore
+      new URL(getRelativeUrlByFilePath(_image.src), Astro.site)
+    : 'undefined';
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <SEO
-      title="Railroader Sleep Beta"
-      description="The public homepage for the Railroaders’ Guide to Healthy Sleep web site."
+      title={ogTitle}
+      description={description}
       openGraph={{
         basic: {
           title: "Railroaders Guide to Healthy Sleep",
           type: "website",
-          image: image
-        }
-      }}
-
+          image: image.toString(),
+        },
+          image: {
+            url: image.toString(),
+            alt: "Railroaders Guide to Healthy Sleep",
+        },
+      }},
+      noindex={noindex}
+      nofollow={nofollow}
       extend={{
         // extending the default link tags
         link: [{ rel: "icon", href: "/favicon.ico" }],
         // extending the default meta tags
       }}
     />
+<meta name="keywords" content="Federal Railroad Administration, FRA, trains, train tracks, railroad crossing, freight railroading, passenger rail, tiger, arra, railroad safety, research, licenses, sleep, health, training" />
 <Fonts />
 
 <ExtraMetaTags />
