@@ -1,0 +1,76 @@
+---
+import Picture from "~/components/core/Picture.astro";
+import PostTags from "~/components/atoms/Tags.astro";
+
+import { getPermalink } from "~/utils/permalinks";
+import { findImage } from "~/utils/images";
+import { getFormattedDate } from "~/utils/utils";
+
+const { post } = Astro.props;
+
+const image = await findImage(post.image);
+---
+
+<div class="mx-4 card w-96 h-72 hover:scale-110">
+	<div class="h-48">
+		<a class="" href={getPermalink(post.slug, "post")}>
+			{
+				image && (
+					<Picture
+						src={image}
+						class="inset-0 object-cover object-centers h-full w-full shadow-xl rounded-lg"
+						widths={[400, 900]}
+						sizes="(max-width: 900px) 400px, 900px"
+						aspectRatio={post.image_aspect_ratio || null}
+						alt={post.title}
+					/>
+				)
+			}
+			{
+				!image && post.video_url && (
+						<div class="aspect-w-16 aspect-h-9">
+							<iframe
+								class="h-48 w-full rounded-xl"
+								src={post.video_url}
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							/>
+						</div>
+				)
+			}
+		</a>
+	</div>
+
+	<div class="text-center h-12 pt-2">
+		<a
+			class="hover:text-primary-focus runderline underline-offset-4 decoration-1 decoration-dotted transition ease-in duration-200"
+			href={getPermalink(post.slug, "post")}
+		>
+			{post.title}
+		</a>
+		{
+			!post.video_title && !post.video_description && (
+				<p class="text-sm sm:text-md flex-grow">
+					{post.excerpt || post.description.substring(0, 100)}...
+				</p>
+			)
+		}
+		{
+			post.video_description && (
+				<p class="text-sm sm:text-md flex-grow">{post.description}</p>
+			)
+		}
+		<footer class="mt-4">
+			<div>
+				<span class="text-sm text-gray-500 dark:text-slate-400">
+					<time datetime={post.publishDate}
+						>{getFormattedDate(post.publishDate)}</time
+					> ~
+					{Math.ceil(post.readingTime)} min read
+				</span>
+			</div>
+			<div class="mt-4">
+				<PostTags tags={post.tags} />
+			</div>
+		</footer>
+	</div>
+</div>
