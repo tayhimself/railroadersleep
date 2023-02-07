@@ -76,7 +76,7 @@ export const fetchCategories = async (section) => {
   const results = (await Promise.all(normalizedCategories))
     .filter((post) => post.category)
     .filter((post) => post.section === section);
-  return await results;
+  return results;
 };
 
 

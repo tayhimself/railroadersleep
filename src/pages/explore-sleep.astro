@@ -1,5 +1,5 @@
 ---
-import { SITE} from "~/config.mjs";
+import { SITE } from "~/config.mjs";
 
 import Layout from "~/layouts/BlogLayout.astro";
 
@@ -7,23 +7,23 @@ import Carousel from "~/components/blog/Carousel.astro";
 
 import { fetchPosts, fetchCategories } from "~/utils/posts";
 
-
 const posts = await fetchPosts();
 //Fetch the sections  from the frontmatter of the files in the data/categories folder
 const section = "Explore Sleep";
-//const categories = new Set(["How Sleep Works", "Body Clock"]);
 const readCategories = await fetchCategories(section);
-const categoryNames = new Set(readCategories.map((category) => category.category));
+const categoryNames = new Set(
+	readCategories.map((category) => category.category)
+);
 
 const filteredposts = posts.filter((post) => categoryNames.has(post.category));
 const postsbycategory = filteredposts.reduce((acc, post) => {
-  acc[post.category] = acc[post.category] || [];
-  acc[post.category].push(post);
-  return acc;
+	acc[post.category] = acc[post.category] || [];
+	acc[post.category].push(post);
+	return acc;
 }, {});
 
 //import * as mainPost from '../../data/blog/tips.mdx'
-import {Content as MainPost} from '../../data/categories/explore-sleep.mdx'
+import { Content as MainPost } from "../../data/categories/explore-sleep.mdx";
 const meta = {
 	title: section,
 	description: SITE.description,
@@ -32,19 +32,23 @@ const meta = {
 ---
 
 <Layout meta={meta}>
-
 	<Fragment slot="title">
 		{section}
 	</Fragment>
 
-  <div
-  class="container mx-auto px-6 sm:px-6 max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg mt-8 mb-12"
->
-  <MainPost />
-</div>
-  {Array.from(readCategories).map((category) => (
-    <Carousel posts={postsbycategory[category.category]} category={category} />
-    <hr/>
-  ))}
-
+	<div
+		class="container mx-auto px-6 sm:px-6 max-w-4xl prose dark:prose-invert dark:prose-headings:text-slate-300 prose-lg prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg mt-8 mb-12"
+	>
+		<MainPost />
+	</div>
+	<div class="[&>div:nth-child(odd)]:bg-gray-100">
+		{
+			Array.from(readCategories).map((category) => (
+				<Carousel
+					posts={postsbycategory[category.category]}
+					category={category}
+				/>
+			))
+		}
+	</div>
 </Layout>
