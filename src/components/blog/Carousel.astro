@@ -1,32 +1,41 @@
 ---
-import Item from "~/components/blog/ListItem.astro";
+import Item from "~/components/blog/CarouselItem.astro";
+import { Icon } from "astro-icon";
 
 const { posts, category } = Astro.props;
 ---
-<div class="px-6 max-w-4xl mx-auto">
-  <h2 class="text-center text-2xl md:text-4xl font-bold leading-tighter tracking-tighter mb-8 mt-8 font-heading">{category.category}</h2>
-  <p class="mb-4">{category.description}</p>
-</div>
-<!-- Slider main container -->
-<div class="swiper mb-8">
 
-	<!-- Additional required wrapper -->
-	<div class="swiper-wrapper">
-		<!-- Slides -->
-		{
-			posts.map((post) => (
-				<div class="swiper-slide">
-					<Item post={post} />
-				</div>
-			))
-		}
+<div class="py-16">
+	<div class="px-8 max-w-4xl mx-auto">
+		<h2
+			class="text-center text-2xl md:text-3xl font-bold leading-tighter tracking-tighter my-8 font-heading"
+		>
+			{category.category}
+		</h2>
+		<p class="mb-8 prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-lg prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg">{category.description}</p>
 	</div>
-	<!-- If we need pagination -->
-	<div class="swiper-pagination"></div>
+	<!-- Slider main container -->
+	<div class="swiper mt-8 mb-16">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+			<!-- Slides -->
+			{
+				posts.map((post) => (
+					<div class="swiper-slide">
+						<Item post={post} />
+					</div>
+				))
+			}
+		</div>
+		<!-- If we need pagination -->
+		<div class="swiper-pagination"></div>
 
-	<!-- If we need navigation buttons -->
-	<div class="swiper-button-prev"></div>
-	<div class="swiper-button-next"></div>
+		<!-- If we need navigation buttons -->
+		<div class="swiper-button-prev">
+			<Icon name="carbon:previous-filled" width="64" />
+		</div>
+		<div class="swiper-button-next"><Icon name="carbon:next-filled" /></div>
+	</div>
 </div>
 
 <link
@@ -37,24 +46,31 @@ const { posts, category } = Astro.props;
 <script type="module">
 	import Swiper from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
 
-	// Create a media condition that targets viewports at least 768px wide
-	const mediaQuery = window.matchMedia("(min-height: 1080px)");
+	// Create a media query for md screens
+	const mdScreen = window.matchMedia("(min-width: 768px)");
+	// Create a media query for xl screens
+	const lgScreen = window.matchMedia("(min-width: 1024px)");
 	// Check if the media query is true
-	const slidesPerView = mediaQuery.matches ? 2 : 1;
+	let slidesPerView = mdScreen.matches ? 2.2 : 1.2;
+	slidesPerView = lgScreen.matches ? 3.2 : slidesPerView;
 
 	const swiper = new Swiper(".swiper", {
 		// Optional parameters
 		direction: "horizontal",
-		loop: true,
-		slidesPerView: 1,
+		loop: false,
+		slidesPerView: slidesPerView,
+		centeredSlides: true,
+		centeredSlidesBounds: true,
 
 		// If we need pagination
 		pagination: {
 			el: ".swiper-pagination",
 		},
 		autoplay: {
-			delay: 5000,
+			delay: 7500,
 			disableOnInteraction: true,
+			pauseOnMouseEnter: true,
+			stopOnLastSlide: true,
 		},
 		// Navigation arrows
 		navigation: {
@@ -66,35 +82,15 @@ const { posts, category } = Astro.props;
 
 <style>
 	.swiper {
-		width: 480px;
+		width: 100vw;
 	}
-
-	@media screen and (min-width: 640px) {
-		.swiper {
-			width: 640px;
-		}
+	.swiper-slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
-
-	@media screen and (min-width: 768px) {
-		.swiper {
-			width: 768px;
-		}
-	}
-
-	.swiper-slide .title {
-		position: absolute;
-		top: 250px;
-		left: 10px;
-		color: white;
-		font-weight: bold;
-		font-size: 12pt;
-		font-family: "Mark Bold" !important;
-	}
-	.swiper-slide .subtitle {
-		position: absolute;
-		top: 275px;
-		left: 20px;
-		color: white;
-		font-size: 10pt;
+	.swiper-button-next::after,
+	.swiper-button-prev::after {
+		display: none;
 	}
 </style>
