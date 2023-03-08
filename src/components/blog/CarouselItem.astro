@@ -28,13 +28,13 @@ const image = await findImage(post.image);
 			}
 			{
 				!image && post.video_url && (
-						<div class="aspect-w-16 aspect-h-9">
-							<iframe
-								class="h-48 w-full rounded-xl"
-								src={post.video_url}
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							/>
-						</div>
+					<div class="aspect-w-16 aspect-h-9">
+						<iframe
+							class="h-48 w-full rounded-xl"
+							src={post.video_url}
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						/>
+					</div>
 				)
 			}
 		</a>
@@ -46,30 +46,26 @@ const image = await findImage(post.image);
 			href={getPermalink(post.slug, "post")}
 		>
 			{post.title}
+			{
+				!post.video_title && !post.video_description && (
+					<p class="text-sm sm:text-md text-left flex-grow">
+						{post.excerpt || post.description.substring(0, 100)}...
+					</p>
+				)
+			}
+			{
+				post.video_description && (
+					<p class="text-sm sm:text-md text-left flex-grow">
+						{post.description.substring(0, 100)}...
+					</p>
+				)
+			}
 		</a>
-		{
-			!post.video_title && !post.video_description && (
-				<p class="text-sm sm:text-md flex-grow">
-					{post.excerpt || post.description.substring(0, 100)}...
-				</p>
-			)
-		}
-		{
-			post.video_description && (
-				<p class="text-sm sm:text-md flex-grow">{post.description}</p>
-			)
-		}
-		<footer class="mt-4">
+		<footer class="">
 			<div>
 				<span class="text-sm text-gray-500 dark:text-slate-400">
-					<time datetime={post.publishDate}
-						>{getFormattedDate(post.publishDate)}</time
-					> ~
-					{Math.ceil(post.readingTime)} min read
+					~ {Math.ceil(post.readingTime)} min read
 				</span>
-			</div>
-			<div class="mt-4">
-				<PostTags tags={post.tags} />
 			</div>
 		</footer>
 	</div>

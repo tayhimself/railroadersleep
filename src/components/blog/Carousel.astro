@@ -5,17 +5,21 @@ import { Icon } from "astro-icon";
 const { posts, category } = Astro.props;
 ---
 
-<div class="py-16">
+<div class="py-8 lg:py-16">
 	<div class="px-8 max-w-4xl mx-auto">
 		<h2
 			class="text-center text-2xl md:text-3xl font-bold leading-tighter tracking-tighter my-8 font-heading"
 		>
 			{category.category}
 		</h2>
-		<p class="mb-8 prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-lg prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg">{category.description}</p>
+		<p
+			class="prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-lg prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg"
+		>
+			{category.description}
+		</p>
 	</div>
 	<!-- Slider main container -->
-	<div class="swiper mt-8 mb-16">
+	<div class="swiper my-8">
 		<!-- Additional required wrapper -->
 		<div class="swiper-wrapper">
 			<!-- Slides -->
@@ -27,12 +31,12 @@ const { posts, category } = Astro.props;
 				))
 			}
 		</div>
-		<!-- If we need pagination -->
-		<div class="swiper-pagination"></div>
+    <!-- If we need pagination -->
+		<div class="mt-4 swiper-pagination"></div>
 
 		<!-- If we need navigation buttons -->
 		<div class="swiper-button-prev">
-			<Icon name="carbon:previous-filled" width="64" />
+			<Icon name="carbon:previous-filled" />
 		</div>
 		<div class="swiper-button-next"><Icon name="carbon:next-filled" /></div>
 	</div>
@@ -57,7 +61,7 @@ const { posts, category } = Astro.props;
 	const swiper = new Swiper(".swiper", {
 		// Optional parameters
 		direction: "horizontal",
-		loop: false,
+		loop: true,
 		slidesPerView: slidesPerView,
 		centeredSlides: true,
 		centeredSlidesBounds: true,
@@ -68,9 +72,9 @@ const { posts, category } = Astro.props;
 		},
 		autoplay: {
 			delay: 7500,
-			disableOnInteraction: true,
-			pauseOnMouseEnter: true,
-			stopOnLastSlide: true,
+			disableOnInteraction: false,
+			pauseOnMouseEnter: false,
+			stopOnLastSlide: false,
 		},
 		// Navigation arrows
 		navigation: {
@@ -88,6 +92,7 @@ const { posts, category } = Astro.props;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-bottom: 4rem;
 	}
 	.swiper-button-next::after,
 	.swiper-button-prev::after {

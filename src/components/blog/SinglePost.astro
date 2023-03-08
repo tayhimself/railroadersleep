@@ -18,9 +18,7 @@ const { post } = Astro.props;
 				{post.title}
 			</h1>
 			<p class="max-w-3xl mx-auto text-center -mt-4 mb-8">
-				<time datetime={post.publishDate}
-					>{getFormattedDate(post.publishDate)}</time
-				> ~ {Math.ceil(post.readingTime)} min read
+         ~ {Math.ceil(post.readingTime)} min read
 			</p>
 			{
 				!post.video_url && post.image && (

@@ -14,6 +14,13 @@ posts.map((post) => {
   typeof post.category === 'string' && categories.add(post.category.toLowerCase());
 });
 
+const interactives = new Set();
+interactives.add({ name: 'Audio Slide Show', link: getPermalink('audio-slide-show') });
+interactives.add({ name: 'Inside Apnea', link: getPermalink('inside-apnea') });
+interactives.add({ name: 'Circadian Rythms', link: getPermalink('circadian') });
+interactives.add({ name: 'Reaction Time', link: getPermalink('think-fast') });
+interactives.add({ name: 'Sleep Lab', link: getPermalink('sleep-lab') });
+
 ---
 
 <header
@@ -77,18 +84,34 @@ posts.map((post) => {
           ))}
           </ul>
         </li>
-				<li>
-					<a
-						class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-						href={getBlogPermalink()}>Articles</a
-					>
-				</li>
-			</ul>
-			<div class="md:self-center flex items-center mb-4 md:mb-0 ml-2">
-				<div class="hidden items-center md:flex">
-					<ToggleTheme iconClass="w-5 h-5" />
-				</div>
-			</div>
+      <li class="dropdown">
+        <button
+          class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+          >Interactives</button
+        >
+        <ul
+          class="dropdown-menu rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white md:min-w-[200px] dark:md:bg-slate-800 drop-shadow-xl"
+        >
+        {Array.from(interactives).map((interactive) => (
+          <li class="">
+            <a
+            class="rounded-t md:hover:bg-gray-100 dark:hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap first-letter:uppercase"
+              href={interactive.link}
+              >{interactive.name}
+            </a>
+          </li>
+        ))
+        }
+        </ul>
+      </li>
+      <li>
+        <a
+          class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+          href={getBlogPermalink()}>Articles</a
+        >
+      </li>
+    </ul>
+
 		</nav>
 	</div>
 </header>
