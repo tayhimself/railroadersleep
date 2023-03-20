@@ -10,27 +10,40 @@ const post = {
 	video_duration: "1:23",
 	video_description: "Apnea on the Rails: Mark's Story",
 };
+import { Content as WhatIsOsaContent } from "~/../data/tours/what-is-osa.md";
+import * as whatIsOsa from "~/../data/tours/what-is-osa.md";
+import { Content as GettingADiagnosisContent } from "~/../data/tours/getting-a-diagnosis.md";
+import * as gettingADiagnosis from "~/../data/tours/getting-a-diagnosis.md";
+import { Content as LivingWithOsaContent } from "~/../data/tours/living-with-osa.md";
+import * as livingWithOsa from "~/../data/tours/living-with-osa.md";
+import { Content as AvailableTreatmentsContent } from "~/../data/tours/available-treatments.md";
+import * as availableTreatments from "~/../data/tours/available-treatments.md";
+
 const actions = [
-  {
-    title: "What is OSA?",
-    description: "Learn about obstructive sleep apnea (OSA), a common sleep disorder that can affect your health and safety.",
-    link: "what-is-osa",
-  },
-  {
-    title: "Getting a Diagnosis",
-    description: "Learn about the diagnosis process for obstructive sleep apnea (OSA), a common sleep disorder that can affect your health and safety.",
-    link: "getting-a-diagnosis",
-  },
-  {
-    title: "Living with OSA",
-    description: "Learn about living with obstructive sleep apnea (OSA), a common sleep disorder that can affect your health and safety.",
-    link: "living-with-osa",
-  },
-  {
-    title: "Available Treatments",
-    description: "Learn about the available treatments for obstructive sleep apnea (OSA), a common sleep disorder that can affect your health and safety.",
-    link: "available-treatments",
-  },
+	{
+		title: "What is OSA?",
+		description:
+			"Learn about obstructive sleep apnea (OSA), a common sleep disorder that can affect your health and safety.",
+		link: "what-is-osa",
+	},
+	{
+		title: "Getting a Diagnosis",
+		description:
+			"Learn about the diagnosis process for obstructive sleep apnea (OSA), a common sleep disorder that can affect your health and safety.",
+		link: "getting-a-diagnosis",
+	},
+	{
+		title: "Living with OSA",
+		description:
+			"Learn about living with obstructive sleep apnea (OSA), a common sleep disorder that can affect your health and safety.",
+		link: "living-with-osa",
+	},
+	{
+		title: "Available Treatments",
+		description:
+			"Learn about the available treatments for obstructive sleep apnea (OSA), a common sleep disorder that can affect your health and safety.",
+		link: "available-treatments",
+	},
 ];
 const {} = Astro.props;
 ---
@@ -68,121 +81,90 @@ const {} = Astro.props;
 				<div
 					class="grid gap-6 md:gap-12 grid-cols-1 md:grid-cols-2 place-items-stretch"
 				>
-        { actions.
-          map((action) => (
-            <ActionCard
-              title={action.title}
-              link={action.link}
-            />
-          ))
-        }
+					{
+						actions.map((action) => (
+							<ActionCard title={action.title} link={action.link} />
+						))
+					}
 				</div>
 			</div>
 			<div class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-w-5xl">
-				<div
-					class="grid gap-6 grid-cols-1 lg:grid-cols-2 place-items-stretch items-center"
-				>
-					<div class="container mx-auto mt-8">
-						<YouTube
-							embed_url={post.video_url}
-							title={post.video_title}
-							duration={post.video_duration}
-						/>
-					</div>
-					<Quote
-						quote="After the first night that I wore the CPAP air machine and slept all night, the next day, when I woke up, I said to myself, 'This is what it's like to sleep all night? This is wonderful!' I felt like a million dollars. I felt like Superman.  Ever since, I've used the CPAP air machine every night when I go to bed, and it’s improved my health. It's also made my life less stressful, because I'm more rested. I bought another CPAP air machine, and I keep that up at my hotel at my away-from-home terminal. Our job, our safety, depends on how rested we are."
-						quote_author="Mark Kramer, locomotive engineer"
+				<Quote
+					quote="After the first night that I wore the CPAP air machine and slept all night, the next day, when I woke up, I said to myself, 'This is what it's like to sleep all night? This is wonderful!' I felt like a million dollars. I felt like Superman.  Ever since, I've used the CPAP air machine every night when I go to bed, and it’s improved my health. It's also made my life less stressful, because I'm more rested. I bought another CPAP air machine, and I keep that up at my hotel at my away-from-home terminal. Our job, our safety, depends on how rested we are."
+					quote_author="Mark Kramer, locomotive engineer"
+				/>
+			</div>
+			<hr
+				class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
+			/>
+
+			<section class="container mx-auto my-8 py-8 md:max-4xl lg:max-w-5xl">
+				<h3 class="font-semibold text-xl text-center" id="what-is-osa">
+					What is OSA?
+				</h3>
+				<div class="container mx-auto mt-8">
+					<YouTube
+						embed_url={whatIsOsa.frontmatter.video_url}
+						title={whatIsOsa.frontmatter.video_title}
+						duration={whatIsOsa.frontmatter.video_duration}
 					/>
 				</div>
-			</div>
-			<div class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-w-5xl">
-				<h3 class="font-semibold text-xl text-center" id="what-is-osa">What is OSA?</h3>
-				<div class="grid gap-6 grid-cols-1 place-items-stretch items-center">
-					<div class="container mx-auto mt-8">
-						<YouTube
-							embed_url={post.video_url}
-							title={post.video_title}
-							duration={post.video_duration}
-						/>
-					</div>
-
-          Snoring signals that the sleeper is having trouble breathing. Snoring is the most common symptom of obstructive sleep apnea (OSA), a disorder that affects more than 18 million Americans, most of whom are overweight, middle-aged men. In fact, it affects about twice as many men as women and runs in families.
-
-          When people breathe, air enters the nose or mouth, and travels through the airway to the lungs. Throat muscles normally keep the airway entrance open. When people with obstructive sleep apnea try to sleep, throat muscles may fail to do that. The tongue then falls against the back of the throat, partially or totally blocking the airway opening. The sounds of snoring reflect a struggle to breathe through a partially blocked airway.
-
-          When the airway is totally blocked, breathing stops completely. A pause in breathing sounds an alarm in the brain. The brain senses the danger, and sends a wake-up call, arousing the sleeper enough to tighten throat muscles. The tongue moves out of the way, the airway reopens, and breathing resumes.
-
-          People with severe obstructive sleep apnea may stop breathing hundreds of times while they sleep. These pauses in breathing may last for a few seconds to a minute or more, and they can recur dozens of times in each hour of sleep. If you were to watch people with severe obstructive sleep apnea sleep, you likely would see their struggle to breathe. You would hear characteristic thunderous snoring, interrupted by episodes of silence when breathing stops. Then you would hear a gasp or loud snort when they awaken, and take in air.
-
-          Sleepers with obstructive sleep apnea awaken repeatedly, but usually for only a few seconds at a time. They seldom remember these awakenings later. They usually recognize, however, that they sleep poorly.
-
-          Someone suffering from severe obstructive sleep apnea may drift off to sleep while watching TV, talking with someone, or even eating. Most worrisome, they may fall asleep on the job or while driving, endangering themselves or others.
+				<WhatIsOsaContent />
+			</section>
+			<hr
+				class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
+			/>
+			<section class="container mx-auto my-8 py-8 md:max-4xl lg:max-w-5xl">
+				<h3 class="font-semibold text-xl text-center" id="getting-a-diagnosis">
+					Getting a diagnosis
+				</h3>
+				<div class="container mx-auto mt-8">
+					<YouTube
+						embed_url={gettingADiagnosis.frontmatter.video_url}
+						title={gettingADiagnosis.frontmatter.video_title}
+						duration={gettingADiagnosis.frontmatter.video_duration}
+					/>
 				</div>
-			</div>
-
-      <div class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-w-5xl">
-				<h3 class="font-semibold text-xl text-center" id="getting-a-diagnosis">Getting a diagnosis</h3>
-				<div class="grid gap-6 grid-cols-1 place-items-stretch items-center">
-					<div class="container mx-auto mt-8">
-						<YouTube
-							embed_url= "https://player.vimeo.com/video/586847584?h=a724fd4786"
-							title= " Lawrence Epstein MD of Harvard tells what to expect from a visit to a sleep specialist."
-							duration={post.video_duration}
-						/>
-					</div>
-
-          Snoring signals that the sleeper is having trouble breathing. Snoring is the most common symptom of obstructive sleep apnea (OSA), a disorder that affects more than 18 million Americans, most of whom are overweight, middle-aged men. In fact, it affects about twice as many men as women and runs in families.
-
-          When people breathe, air enters the nose or mouth, and travels through the airway to the lungs. Throat muscles normally keep the airway entrance open. When people with obstructive sleep apnea try to sleep, throat muscles may fail to do that. The tongue then falls against the back of the throat, partially or totally blocking the airway opening. The sounds of snoring reflect a struggle to breathe through a partially blocked airway.
-
-          When the airway is totally blocked, breathing stops completely. A pause in breathing sounds an alarm in the brain. The brain senses the danger, and sends a wake-up call, arousing the sleeper enough to tighten throat muscles. The tongue moves out of the way, the airway reopens, and breathing resumes.
-
-          People with severe obstructive sleep apnea may stop breathing hundreds of times while they sleep. These pauses in breathing may last for a few seconds to a minute or more, and they can recur dozens of times in each hour of sleep. If you were to watch people with severe obstructive sleep apnea sleep, you likely would see their struggle to breathe. You would hear characteristic thunderous snoring, interrupted by episodes of silence when breathing stops. Then you would hear a gasp or loud snort when they awaken, and take in air.
-
-          Sleepers with obstructive sleep apnea awaken repeatedly, but usually for only a few seconds at a time. They seldom remember these awakenings later. They usually recognize, however, that they sleep poorly.
-
-          Someone suffering from severe obstructive sleep apnea may drift off to sleep while watching TV, talking with someone, or even eating. Most worrisome, they may fall asleep on the job or while driving, endangering themselves or others.
+				<GettingADiagnosisContent />
+				<Quote
+					quote="A guy that I worked with came in with a line on his face, and we started talking about that. He told me about his mask, and we started talking about snoring and everything else, and I thought wow, you know, I think I have it. And then I went in for a sleep study. I’ve been on the CPAP machine since 2000. If I don’t use my machine, my sleep is terrible. I have a machine at home, and another that I leave at my away-from-home terminal."
+					quote_author="Jack, locomotive engineer and brakeman"
+				/>
+			</section>
+			<hr
+				class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
+			/>
+			<section class="container mx-auto my-8 py-8 md:max-4xl lg:max-w-5xl">
+				<h3 class="font-semibold text-xl text-center" id="living-with-osa">
+					Living with OSA
+				</h3>
+				<div class="container mx-auto mt-8">
+					<YouTube
+						embed_url={livingWithOsa.frontmatter.video_url}
+						title={livingWithOsa.frontmatter.video_title}
+						duration={livingWithOsa.frontmatter.video_duration}
+					/>
 				</div>
-			</div>
-
-      <div class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-w-5xl">
-				<h3 class="font-semibold text-xl text-center" id="living-with-osa">Living with OSA</h3>
-				<div class="grid gap-6 grid-cols-1 place-items-stretch items-center">
-					<div class="container mx-auto mt-8">
-						<YouTube
-							embed_url= "https://player.vimeo.com/video/505480165?h=e0a7b173d3"
-							title= "Stuart Quan, MD, of Harvard, explains how untreated obstructive sleep apnea may lead to serious medical disorders."
-							duration={post.video_duration}
-						/>
-					</div>
-
-          Snoring signals that the sleeper is having trouble breathing. Snoring is the most common symptom of obstructive sleep apnea (OSA), a disorder that affects more than 18 million Americans, most of whom are overweight, middle-aged men. In fact, it affects about twice as many men as women and runs in families.
-
+				<LivingWithOsaContent />
+			</section>
+			<hr
+				class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
+			/>
+			<section class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-w-5xl">
+				<h3 class="font-semibold text-xl text-center" id="available-treatments">
+					Available Treatments
+				</h3>
+				<div class="container mx-auto mt-8">
+          <YouTube
+          embed_url={availableTreatments.frontmatter.video_url}
+          title={availableTreatments.frontmatter.video_title}
+          duration={availableTreatments.frontmatter.video_duration}
+        />
 				</div>
-			</div>
-
-
-      <div class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-w-5xl">
-				<h3 class="font-semibold text-xl text-center" id="available-treatments">Available Treatments</h3>
-				<div class="grid gap-6 grid-cols-1 place-items-stretch items-center">
-					<div class="container mx-auto mt-8">
-						<YouTube
-							embed_url= "https://player.vimeo.com/video/535086365?h=9c89c42f19"
-							title= " Lawrence Epstein MD of Harvard discusses OSA treatment options."
-							duration={post.video_duration}
-						/>
-					</div>
-
-          Snoring signals that the sleeper is having trouble breathing. Snoring is the most common symptom of obstructive sleep apnea (OSA), a disorder that affects more than 18 million Americans, most of whom are overweight, middle-aged men. In fact, it affects about twice as many men as women and runs in families.
-
-				</div>
-			</div>
-
-      </div>
-    </article>
+        <AvailableTreatmentsContent />
+			</section>
+		</article>
 	</div>
+
+	<script></script>
 </Layout>
-
-<script>
-
-</script>
