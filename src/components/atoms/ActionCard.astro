@@ -1,0 +1,17 @@
+---
+let { cardColor, title, link } = Astro.props;
+// if empty cardColor, set default
+if (!cardColor) {
+  cardColor = 'gray';
+}
+const cardClass = `bg-${cardColor}-100 text-${cardColor}-700 dark:bg-${cardColor}-100 dark:text-${cardColor}-700 min-h-full mx-4 p-4 rounded-lg shadow-lg animate-in slide-in-from-left duration-500 hover:shadow-xl hover:scale-115 transform hover:translate-y-1 hover:translate-x-1 hover:z-10`;
+---
+
+  <div class={cardColor +" " + cardClass}>
+    <a href={`#${link}`} class="no-underline" >
+
+		<div class="text-base font-mono italic font-light text-center text-slate-700" >
+        {title}
+    </div>
+    </a>
+	</div>

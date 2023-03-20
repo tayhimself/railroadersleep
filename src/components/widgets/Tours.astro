@@ -1,0 +1,80 @@
+---
+import { Icon } from "astro-icon";
+import { getPermalink } from "~/utils/permalinks";
+
+const items = [
+	{
+		title: "Concerned About Sleep Apnea?",
+		description:
+			"Find out more about this common sleep disorder and how it can affect your health and safety.",
+		icon: "healthicons:sleepy",
+		link: "apnea-tour",
+	},
+	{
+		title: "Railroader Specific Sleep Tips",
+		description:
+			"Smart sleep strategies can help you perform your job safely, enjoy family and community life.",
+		icon: "mdi:sleep",
+		link: "apnea-tour",
+	},
+	{
+		title: "Caffeine, Shift Work, and Sleep",
+		description:
+			"Caffeine and shift work can affect your sleep. Learn how to manage your sleep and alertnesss.",
+		icon: "ph:coffee",
+		link: "apnea-tour",
+	},
+	{
+		title: "Difficulty falling or staying asleep?",
+		description:
+			"Learn about the causes of sleep problems and how to get a good night's sleep.",
+		icon: "mdi:sleep-off",
+    link: "apnea-tour",
+	},
+];
+---
+
+<section class="relative">
+	<div class="max-w-6xl mx-auto px-4 py-4">
+		<div
+			class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-start dark:text-white animate-in slide-in-from-left duration-500"
+		>
+			{
+				items.map(({ title, description, icon, link }) => (
+					<div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded-lg shadow-xl hover:shadow-lg hover:scale-110 transition dark:border dark:border-slate-800 items-stretch h-full">
+						<a href={getPermalink(link)} class="flex items-center mb-4">
+							<Icon name={icon} class="w-8 h-8" />
+
+							<div class="ml-4 text-lg font-semibold">{title}</div>
+						</a>
+						<p class="text-gray-500 dark:text-gray-400 text-md">
+							{description}
+						</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<script>
+	const callback = function (entries) {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add("animate-fadeIn");
+				console.log("intersecting");
+			} else {
+				entry.target.classList.remove("animate-fadeIn");
+				console.log("not intersecting");
+			}
+		});
+	};
+
+	const observer = new IntersectionObserver(callback);
+
+	const targets = document.querySelectorAll(".js-show-on-scroll");
+	targets.forEach(function (target) {
+		target.classList.add("opacity-0");
+		observer.observe(target);
+	});
+</script>

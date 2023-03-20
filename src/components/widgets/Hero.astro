@@ -1,33 +1,31 @@
 ---
-import { Icon } from 'astro-icon';
-import {Image, Picture} from '@astrojs/image/components';
+import { Icon } from "astro-icon";
+import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<section>
-	<div class="mx-auto">
-		<div class="py-12 md:py-20">
-			<div class="text-center pb-10 md:pb-16 px-8 sm:px-4">
-				<h1 class="text-5xl md:text-[3.50rem] font-bold leading-tighter tracking-tighter mb-4 font-heading">
-          Why does Sleep Matter?
-				</h1>
-				<div class="max-w-3xl mx-auto">
-					<p class="text-lg text-gray-600 mb-4 dark:text-slate-400">
-            Learn how sleep affects your health,
-            how you function, and how you feel.
-					</p>
-				</div>
-			</div>
-			<div>
-				<div class="mb-8 m-auto max-h-96">
-					<Picture
-						src={import('~/assets/images/hero-2.jpg')}
-						class=" bg-gray-400 dark:bg-slate-700 w-full object-cover"
-						widths={[900, 1200, 1600]}
-						sizes=" (max-width: 1600px) 900px, 1200px, 1600px"
-						alt="Hero Image"
-					/>
-				</div>
-			</div>
+<section class="flex flex-col h-[20em] md:h-[28em] lg:h-[36em]">
+	<div class="relative h-full w-full">
+		<Picture
+			src={import("~/assets/images/hero-2.jpg")}
+			class="bg-gray-400 dark:bg-slate-700 w-full object-cover h-full absolute top-0 -z-20"
+			widths={[900, 1200, 1600]}
+			sizes=" (max-width: 1600px) 900px, 1200px, 1600px"
+			alt="Hero Image"
+		/>
+
+		<div
+			class="absolute top-0 bg-gradient-to-b from-transparent to-white dark:to-slate-900 h-full w-full -z-10"
+		>
+		</div>
+
+
+		<div class="absolute bottom-1/4 w-full">
+			<h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-center">
+				Railroader's Guide to Healthy Sleep
+			</h1>
+			<p class="text-center leading-loose md:text-xl mt-4 md:mt-8 base-content text-gray-600 mb-4 dark:text-slate-400">
+				Learn how sleep affects your health, how you function, and how you feel.
+			</p>
 		</div>
 	</div>
 </section>

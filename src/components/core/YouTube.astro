@@ -17,10 +17,10 @@ const { embed_url, title, duration, description } = Astro.props;
 	<div
 		class="w-full h-1/2 text-gray-600 dark:text-slate-400 py-4 flex flex-row justify-evenly"
 	>
-		<div class="basis-2/3 px-2">
-	 		<span class="font-semibold">{title}</span>
-      <span class="text-sm text-opacity-75">({duration})</span>
+		<div class="">
+	 		<span class="font-light md:font-medium text-sm md:text-base">{title}</span>
+      <span class="text-xs md:text-sm font-light">({duration})</span>
 		</div>
-		<div class="text-base text-opacity-75">{description}</div>
+		<div class="text-sm md:text-base text-opacity-75">{description}</div>
 	</div>
 </div>
