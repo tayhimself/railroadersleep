@@ -1,0 +1,55 @@
+---
+import Picture from "~/components/core/Picture.astro";
+import YouTube from "../core/YouTube.astro";
+import { findImage } from "~/utils/images";
+const { post } = Astro.props;
+const image = await findImage(post.image);
+---
+<article>
+  <header>
+    <h1
+      class="px-4 sm:px-6 max-w-3xl mx-auto text-center text-2xl md:text-3xl font-bold leading-tighter tracking-tighter mb-8 font-heading"
+    >
+      {post.title}
+    </h1>
+    <p class="max-w-3xl mx-auto text-center -mt-4 mb-8">
+       ~ {Math.ceil(post.readingTime)} min read
+    </p>
+    {
+      !post.video_url && image && (
+        <Picture
+          src={image}
+          class=" mx-auto mt-4 mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+          widths={[400, 900]}
+          sizes="(max-width: 900px) 400px, 900px"
+          alt={post.description}
+          aspectRatio={image.width / image.height}
+        />
+      )
+    }
+    {
+      post.video_url && (
+        <div class="container mx-auto px-8 sm:px-6 max-w-5xl mt-8">
+              <YouTube embed_url={post.video_url} title={post.video_title} duration={post.video_duration} description={post.video_description} />
+          </div>
+      )
+    }
+  </header>
+  <div
+    class="container mx-auto max-w-3xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg mt-8"
+  >
+    {post.Content ? <post.Content /> : <Fragment set:html={post.body} />}
+  </div>
+
+  <div class="modal-action flex content-center">
+    <label for={post.slug} class="btn self-center">Close</label>
+  </div>
+</article>
+
+<script>
+  /**
+   * Simple cookie functions to check if cookie exists and set cookie to determine
+   * if the modal should be shown or not.
+   */
+
+</script>

@@ -32,6 +32,7 @@ const getNormalizedPost = async (post) => {
     quote_author: frontmatter.quote_author,
     category: frontmatter.category,
     section: frontmatter.section,
+    feature: frontmatter.feature,
 	};
 };
 
@@ -46,7 +47,7 @@ const load = async function () {
 	});
 
 	const results = (await Promise.all(normalizedPosts))
-		.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf())
+		//.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf())
 		.filter((post) => !post.draft);
 	return results;
 };
@@ -92,4 +93,11 @@ export const findPostsByIds = async (ids) => {
 		});
 		return r;
 	}, []);
+};
+
+/** */
+export const fetchPostsByFeature = async (feature) => {
+	let posts = await fetchPosts();
+  posts = posts.filter((post) => post.feature === feature);
+  return posts;
 };

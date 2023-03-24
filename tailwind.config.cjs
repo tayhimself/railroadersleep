@@ -14,7 +14,7 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],
+	plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate"), require("daisyui")],
 	darkMode: "class",
 	animation: {
 		fadeIn: "fadeIn 2s ease-in forwards",
@@ -25,6 +25,10 @@ module.exports = {
 			"100%": { opacity: 1 },
 		},
 	},
+  daisyui: {
+    themes: ["light"],
+    logs: false,
+  },
 };
 
 /*
