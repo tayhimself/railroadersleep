@@ -6,6 +6,8 @@ video_url: "https://player.vimeo.com/video/794546795?h=d0ad0d7b49"
 video_title: "What is the Danger Zone?"
 video_duration: "0:43"
 video_description: "Michael Coplen, former Federal Railroad Administration human factors researcher and former locomotive engineer, tells how normal daily lows in alertness pose safety risks."
+feature: Railroaders
+sort: 30
 category: "How Sleep Works"
 tags: ["health", "education", "sleep"]
 ---
