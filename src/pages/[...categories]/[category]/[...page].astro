@@ -58,7 +58,10 @@ const meta = {
 <Layout meta={meta}>
 	<div class="container mx-auto px-6 sm:px-6 max-w-4xl mt-8 mb-12">
 		<Fragment slot="title">
-			{category}
+      <h1 class="px-4 mb-12 -mt-8 max-w-3xl mx-auto text-center text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
+    >
+        {category}
+      </h1>
 		</Fragment>
 		<BlogList posts={page.data} />
 		<Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
