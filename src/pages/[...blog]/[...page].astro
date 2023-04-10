@@ -4,6 +4,7 @@ import { SITE, BLOG } from '~/config.mjs';
 import Layout from '~/layouts/BlogLayout.astro';
 import BlogList from '~/components/blog/List.astro';
 import Pagination from '~/components/atoms/Pagination.astro';
+import Container from '~/components/core/Container.astro';
 
 import { fetchPosts } from '~/utils/posts';
 import { getCanonical, getPermalink, BLOG_BASE } from '~/utils/permalinks';
@@ -23,11 +24,11 @@ const { page } = Astro.props;
 const currentPage = page.currentPage ?? 1;
 
 const meta = {
-	title: `Blog ${currentPage > 1 ? `— Page ${currentPage} ` : ''}— ${SITE.name}`,
+	title: `Railroader Sleep ${currentPage > 1 ? `— Page ${currentPage} ` : ''}— ${SITE.name}`,
 	description: SITE.description,
 	canonical: getCanonical(getPermalink(page.url.current)),
 	ogType: "website",
-	noindex: currentPage > 1
+	noindex: SITE.noindex && currentPage > 1
 };
 ---
 
@@ -36,6 +37,8 @@ const meta = {
 		<span class="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500">All our content in one place
     </span>
 	</Fragment>
-	<BlogList posts={page.data} />
-	<Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  <Container>
+    <BlogList posts={page.data} />
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </Container>
 </Layout>

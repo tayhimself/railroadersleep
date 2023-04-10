@@ -1,6 +1,7 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import { findImage } from "~/utils/images";
+import {Icon} from "astro-icon";
 
 const { post } = Astro.props;
 
@@ -11,7 +12,7 @@ const image = await findImage(post.image);
 
     <div class="overflow-hidden">
       {
-        image && (
+        image && !post.video_url && (
           <Picture
             src={image}
             class="absolute inset-0 object-cover object-center h-full mb-6 rounded-l-xl"
@@ -23,7 +24,7 @@ const image = await findImage(post.image);
         )
       }
       {
-        !image && post.video_url && (
+        post.video_url && (
           <div class=" mb-6 rounded h-full w-full">
             <div class="aspect-w-16 aspect-h-9">
               <iframe

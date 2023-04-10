@@ -1,5 +1,5 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
+import Layout from "~/layouts/BlogLayout.astro";
 import YouTube from "~/components/core/YouTube.astro";
 import ActionCard from "~/components/atoms/ActionCard.astro";
 import Quote from "~/components/atoms/Quote.astro";
@@ -17,6 +17,7 @@ import { Content as LivingWithOsaContent } from "~/../data/tours/living-with-osa
 import * as livingWithOsa from "~/../data/tours/living-with-osa.md";
 import { Content as AvailableTreatmentsContent } from "~/../data/tours/available-treatments.md";
 import * as availableTreatments from "~/../data/tours/available-treatments.md";
+import { Content as Introduction } from "~/../data/tours/apnea-introduction.md";
 
 const actions = [
 	{
@@ -48,33 +49,14 @@ const {} = Astro.props;
 ---
 
 <Layout>
-	<div
-		class="container mx-auto px-4 max-w-4xl prose dark:prose-invert dark:prose-headings:text-slate-300 prose-lg prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg mt-8 mb-12"
-	>
+  <Fragment slot="title">Sleep Apnea</Fragment>
+
 		<article>
-			<h1
-				class="px-4 max-w-3xl mx-auto text-center text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8 font-heading"
-			>
-				Sleep Apnea
-			</h1>
 
 			<div
-				class="container mx-auto px-6 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg mt-8"
+				class="container mx-auto px-6 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg "
 			>
-				Obstructive sleep apnea (OSA) is a sleep disorder that affects a
-				significant portion of the population. It occurs when the upper airway
-				becomes partially or completely blocked during sleep, leading to
-				interruptions in breathing and causing oxygen levels in the blood to
-				drop.
-				<p>
-					This can result in a range of symptoms, including loud snoring,
-					gasping or choking during sleep, daytime sleepiness, and difficulty
-					concentrating. OSA can also lead to more serious health issues, such
-					as high blood pressure, heart disease, and stroke.
-				</p>
-				The importance of OSA to railroaders and safety is significant. Sleep deprivation
-				and fatigue can impair cognitive functioning and reaction time, increasing
-				the likelihood of errors and accidents.
+        <Introduction />
 			</div>
 			<div class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-5xl">
 				<div
@@ -97,6 +79,9 @@ const {} = Astro.props;
 				class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
 			/>
 
+			<div
+				class="container mx-auto px-6 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg "
+			>
 			<section class="container mx-auto my-8 py-8 md:max-4xl lg:max-w-5xl">
 				<h3 class="font-semibold text-xl text-center" id="what-is-osa">
 					What is OSA?
@@ -162,8 +147,8 @@ const {} = Astro.props;
 				</div>
         <AvailableTreatmentsContent />
 			</section>
+      </div>
 		</article>
-	</div>
 
 	<script></script>
 </Layout>

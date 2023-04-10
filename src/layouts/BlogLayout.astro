@@ -6,13 +6,11 @@ const { meta } = Astro.props;
 
 <Layout {meta}>
 	<section class="sm:py-8 lg:py-12 mx-auto">
-		<header>
 			<h1
 				class="text-center text-4xl font-bold leading-tighter tracking-tighter mb-8 md:mb-16 font-heading"
 			>
 				<slot name="title" />
 			</h1>
-		</header>
 		<slot />
 	</section>
 </Layout>
