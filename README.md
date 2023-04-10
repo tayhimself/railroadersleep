@@ -5,6 +5,7 @@
 
 - [Railroader Sleep](#railroader-sleep)
   - [Purpose](#purpose)
+  - [Editing articles](#editing-articles)
   - [Getting started](#getting-started)
     - [Project structure](#project-structure)
     - [Commands](#commands)
@@ -24,12 +25,19 @@
 A sample view for the [railroadersleep](https://railroadersleep.fra.dot.gov/improve/overview) FRA site. Inspiration is below.
 - https://www.volpe.dot.gov
 - https://media.hopper.com
+- https://startsleeping.org
 
+## Editing articles
+
+-	Editing files on github is explained here https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files
+-	All the articles are in the `data/articles/` folder and can be edited there. They are poorly named (page1,page2, etc.) but the metadata at the top can help explain what each file is.
+-	At the beginning of each file, the metadata can also be edited and updated if assets need to be updated.
+-	The file format is .mdx (https://mdxjs.com/docs/what-is-mdx/#markdown) but I would stick to simple markdown https://www.markdownguide.org/cheat-sheet/
+-	Image assets are in `/src/assets` and in `/public`. You shouldn’t need to change them but FYI.
 
 ## Getting started
 
 ### Project structure
-
 
 
 ```
