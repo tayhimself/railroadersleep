@@ -5,6 +5,8 @@
 
 - [Railroader Sleep](#railroader-sleep)
   - [Purpose](#purpose)
+  - [Editing Metadata](#editing-metadata)
+  - [Editing the home page](#editing-the-home-page)
   - [Editing articles](#editing-articles)
   - [Getting started](#getting-started)
     - [Project structure](#project-structure)
@@ -27,10 +29,20 @@ A sample view for the [railroadersleep](https://railroadersleep.fra.dot.gov/impr
 - https://media.hopper.com
 - https://startsleeping.org
 
+
+## Editing Metadata
+Look for the `src/config.mjs` file. This is where all the metadata such as site name, title, description is stored. You can edit the metadata there and the next build will pick up your changes.
+## Editing the home page
+This is a little complicated, but the home page is in `src/pages/index.astro`. You will see a number of components, I\'ll try to explain what each one does.
+
+- To be filled in
+
 ## Editing articles
 
+
+
 -	Editing files on github is explained here https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files
--	All the articles are in the `data/articles/` folder and can be edited there. They are poorly named (page1,page2, etc.) but the metadata at the top can help explain what each file is.
+-	All the articles are in the `data/` folder and can be edited there. They are poorly named (page1,page2, etc.) but the metadata at the top can help explain what each file is.
 -	At the beginning of each file, the metadata can also be edited and updated if assets need to be updated.
 -	The file format is .mdx (https://mdxjs.com/docs/what-is-mdx/#markdown) but I would stick to simple markdown https://www.markdownguide.org/cheat-sheet/
 -	Image assets are in `/src/assets` and in `/public`. You shouldn’t need to change them but FYI.
@@ -47,9 +59,14 @@ A sample view for the [railroadersleep](https://railroadersleep.fra.dot.gov/impr
 |       ├── post-slug-1.md
 |       ├── post-slug-2.mdx
 |       └── ...
+|   └── tours/
+|       ├── apnea-introduction.md
+|       ├── sleep-introduction.md
+|       └── ...
 ├── public/
 │   ├── robots.txt
 │   └── favicon.ico
+|   └── interactives ...
 ├── src/
 │   ├── assets/
 │   │   ├── images/
@@ -84,14 +101,8 @@ A sample view for the [railroadersleep](https://railroadersleep.fra.dot.gov/impr
 └── ...
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
 Any static assets, like images, can be placed in the `public/` directory if they do not require any transformation or in the `assets/` directory if they are imported directly.
 
-
-This site is largely based on the AstroWind template.
 <br>
 
 ### Commands
@@ -109,49 +120,8 @@ All commands are run from the root of the project, from a terminal:
 
 ### Configuration
 
-Basic configuration file: `./src/config.mjs`
+Basic configuration file: `./src/config.mjs`, edit it to change the site name, origin, etc.
 
-```javascript
-export const SITE = {
-  name: "Example",
-
-  origin: "https://railroadersleep.netlify.app/",
-  basePathname: "", // Change this if you need to deploy to Github Pages, for example
-
-  title: "Example - This is the homepage title of Example",
-  description: "This is the homepage description of Example",
-
-  googleAnalyticsId: false, // or "G-XXXXXXXXXX",
-  googleSiteVerificationId: false // or some value,
-};
-
-export const BLOG = {
-  disabled: false,
-  postsPerPage: 4,
-
-  blog: {
-    disabled: false,
-    pathname: 'blog', // blog main path, you can change this to "articles" (/articles)
-  },
-
-  post: {
-    disabled: false,
-    pathname: '', // empty for /some-post, value for /pathname/some-post
-  },
-
-  category: {
-    disabled: false,
-    pathname: 'category', // set empty to change from /category/some-category to /some-category
-  },
-
-  tag: {
-    disabled: false,
-    pathname: 'tag', // set empty to change from /tag/some-tag to /some-tag
-  },
-};
-
-
-```
 
 <br>
 
@@ -189,6 +159,8 @@ And check out the following files:
 Visit https://playwright.dev/docs/intro for more information. ✨
 
 ### Deploy
+
+Automatically deploys to Netlify on push to main branch. Go to https://app.netlify.com/sites/railroadersleep/overview to see the status of the deploy.
 
 #### Deploy to production (manual)
 
