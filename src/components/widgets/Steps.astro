@@ -4,7 +4,9 @@ import { Picture } from '@astrojs/image/components';
 import { getPermalink } from '~/utils/permalinks.js';
 ---
 
-<section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
+<section>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-8 py-6 lg:py-8 lg:pt-12">
+
 	<div class="grid gap-6 row-gap-10 md:grid-cols-2">
 		<div class="md:pb-6 md:pr-16">
 			<h2 class="mb-8 text-2xl lg:text-3xl font-bold font-heading">
@@ -90,4 +92,5 @@ import { getPermalink } from '~/utils/permalinks.js';
 			/>
 		</div>
 	</div>
+  </div>
 </section>

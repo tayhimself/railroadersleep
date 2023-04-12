@@ -1,62 +1,52 @@
 ---
-import { Icon } from 'astro-icon';
-import { getPermalink } from '~/utils/permalinks';
+import { Icon } from "astro-icon";
+import { getPermalink } from "~/utils/permalinks";
 
 const items = [
 	{
-		title: 'Explore Sleep',
+		title: "Explore Sleep",
 		description:
-			'For railroaders, good sleep improves safety and health, both on and off the job. Learn what helps or harms the quality and quantity of your sleep. Discover your daily patterns of alertness and sleepiness. Find out if it’s time to talk to your healthcare provider about your sleep.',
-		icon: 'fa:search',
-    link: 'explore-sleep',
+			"For railroaders, good sleep improves safety and health, both on and off the job. Learn what helps or harms the quality and quantity of your sleep. Discover your daily patterns of alertness and sleepiness. Find out if it’s time to talk to your healthcare provider about your sleep.",
+		icon: "fa:search",
+		link: "explore-sleep",
 	},
 	{
-		title: 'Improve Sleep',
+		title: "Improve Sleep",
 		description:
-			'Smart sleep strategies can help you perform your job safely, enjoy family and community life, see friends, and even squeeze in sports or other leisure activities. ',
-		icon: 'icon-park-outline:sleep-one',
-    link: 'explore-sleep',
+			"Smart sleep strategies can help you perform your job safely, enjoy family and community life, see friends, and even squeeze in sports or other leisure activities. ",
+		icon: "icon-park-outline:sleep-one",
+		link: "explore-sleep",
 	},
 	{
-		title: 'Balance Work and Life',
+		title: "Balance Work and Life",
 		description:
-			'It is a challenge to balance work and life while working unpredictable hours. Railroaders work in a 24/7 world and are called to perform their duties day and night, with little notice. The industry may never sleep, but railroad employees need sleep to perform safely and meet operational expectations.',
-		icon: 'fa-solid:balance-scale-left',
-    link: 'explore-sleep',
+			"It is a challenge to balance work and life while working unpredictable hours. Railroaders work in a 24/7 world and are called to perform their duties day and night, with little notice. The industry may never sleep, but railroad employees need sleep to perform safely and meet operational expectations.",
+		icon: "fa-solid:balance-scale-left",
+		link: "explore-sleep",
 	},
 ];
 ---
 
 <section class="relative">
-	<div class="absolute inset-0 bg-primary-50 dark:bg-slate-800 pointer-events-none" aria-hidden="true"></div>
-	<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
-		<div class="py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
-    <!--
-
-			<div class="mb-8 text-center">
-				<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase">Components</p>
-				<h2 class="text-3xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
-					Most used widgets
-				</h2>
-				<p class="max-w-3xl mx-auto text-center text-lg text-gray-600 dark:text-slate-400">
-					Provides frequently used components for building websites using Tailwind CSS
-				</p>
-			</div>
-    -->
-			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12 dark:text-white">
-				{
-					items.map(({ title, description, icon, link }) => (
-						<div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded-lg shadow-xl hover:shadow-lg hover:scale-110 transition dark:border dark:border-slate-800 items-stretch h-full">
-							<a href={getPermalink(link)} class="flex items-center mb-4">
-								<Icon name={icon} class="w-12 h-12" />
-
-								<div class="ml-4 text-lg font-bold">{title}</div>
-							</a>
-							<p class="text-gray-500 dark:text-gray-400 text-md">{description}</p>
-						</div>
-					))
-				}
-			</div>
+	<div
+		class="relative max-w-6xl mx-auto px-4 sm:px-6 py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12"
+	>
+		<div
+			class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12 dark:text-white"
+		>
+			{
+				items.map(({ title, description, icon, link }) => (
+					<div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded-lg shadow-xl hover:shadow-lg hover:scale-110 transition dark:border dark:border-slate-800 items-stretch h-full">
+						<a href={getPermalink(link)} class="flex items-center mb-4">
+							<Icon name={icon} class="w-12 h-12" />
+							<div class="ml-4 text-lg font-bold">{title}</div>
+						</a>
+						<p class="text-gray-500 dark:text-gray-400 text-md">
+							<a href={getPermalink(link)}>{description}</a>
+						</p>
+					</div>
+				))
+			}
 		</div>
 	</div>
 </section>
