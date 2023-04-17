@@ -5,6 +5,7 @@
 
 - [Railroader Sleep](#railroader-sleep)
   - [Purpose](#purpose)
+    - [Some research about railroad workers and sleep education](#some-research-about-railroad-workers-and-sleep-education)
   - [Editing Metadata](#editing-metadata)
   - [Editing the home page](#editing-the-home-page)
   - [Editing articles](#editing-articles)
@@ -24,11 +25,17 @@
 
 ## Purpose
 
-A sample view for the [railroadersleep](https://railroadersleep.fra.dot.gov/improve/overview) FRA site. Inspiration is below.
+A sample view for the [railroadersleep](https://railroadersleep.fra.dot.gov/improve/overview) FRA site.
+
+Inspiration:
 - https://www.volpe.dot.gov
 - https://media.hopper.com
 - https://startsleeping.org
 
+### Some research about railroad workers and sleep education
+- https://railroads.dot.gov/elibrary/work-schedules-and-sleep-patterns-railroad-train-and-engine-service-employees-passenger
+- https://railroads.dot.gov/elibrary/information-and-communications-technology-survey-class-i-railroad-train-yard-and-engine
+- https://www.cdc.gov/niosh/work-hour-training-for-nurses/part1.html
 
 ## Editing Metadata
 Look for the `src/config.mjs` file. This is where all the metadata such as site name, title, description is stored. You can edit the metadata there and the next build will pick up your changes.
@@ -38,8 +45,6 @@ This is a little complicated, but the home page is in `src/pages/index.astro`. Y
 - To be filled in
 
 ## Editing articles
-
-
 
 -	Editing files on github is explained here https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files
 -	All the articles are in the `data/` folder and can be edited there. They are poorly named (page1,page2, etc.) but the metadata at the top can help explain what each file is.
