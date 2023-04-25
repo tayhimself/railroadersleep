@@ -1,0 +1,36 @@
+{"frames": [
+
+{
+	"filename": "background",
+	"frame": {"x":1,"y":1,"w":625,"h":550},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":625,"h":550},
+	"sourceSize": {"w":625,"h":550}
+},
+{
+	"filename": "preloader-bar-back",
+	"frame": {"x":1,"y":553,"w":254,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":254,"h":64},
+	"sourceSize": {"w":254,"h":64}
+},
+{
+	"filename": "preloader-bar",
+	"frame": {"x":257,"y":553,"w":254,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":254,"h":64},
+	"sourceSize": {"w":254,"h":64}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "C:\\freelance\\Vox\\thinkFast\\assets\\graphics/preloader.png",
+	"format": "RGBA8888",
+	"size": {"w":627,"h":618},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:839e9d32a07180810cf73a84db1be6d1:b6506180260c66eb06b560190726984f:b6cdaa10a06bef6f46bf15cd0aaf732b$"
+}
+}

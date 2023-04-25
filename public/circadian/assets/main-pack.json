@@ -1,0 +1,39 @@
+{
+    "section1": {
+        "files": [
+            {
+                "atlasURL": "assets/graphics/game-graphics.json",
+                "textureURL": "assets/graphics/game-graphics.png",
+                "type": "atlas",
+                "key": "game-graphics"
+            },
+            {
+                "textureURL": "assets/fonts/open-sans-bold_0.png",
+                "fontDataURL": "assets/fonts/open-sans-bold.xml",
+                "type": "bitmapFont",
+                "key": "open-sans-bold"
+            },
+            {
+                "url": [
+                    "assets/sounds/time_awake_1.ogg",
+                    "assets/sounds/time_awake_1.mp3"
+                ],
+                "type": "audio",
+                "key": "time_awake_1"
+            },
+            {
+                "textureURL": "assets/fonts/verdana_0.png",
+                "fontDataURL": "assets/fonts/verdana.xml",
+                "type": "bitmapFont",
+                "key": "verdana"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}

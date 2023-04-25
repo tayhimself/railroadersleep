@@ -1,0 +1,28 @@
+{"frames": [
+
+{
+	"filename": "karens-charts-acti",
+	"frame": {"x":1,"y":1,"w":751,"h":428},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":751,"h":428},
+	"sourceSize": {"w":751,"h":428}
+},
+{
+	"filename": "karens-charts-hypno",
+	"frame": {"x":1,"y":431,"w":751,"h":428},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":751,"h":428},
+	"sourceSize": {"w":751,"h":428}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "C:\\freelance\\Vox\\thinkFast\\assets\\graphics/karens-charts.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:c269f40312471cc8e35c188762e08852:6f6f5140afc42da68298c50357a23009:ed64e6b84bf50d9588a157e4c39ff977$"
+}
+}

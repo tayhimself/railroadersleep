@@ -1,0 +1,48 @@
+---
+import {SITE} from '~/config.mjs'
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+
+import Layout from '~/layouts/PageLayout.astro'
+const meta = {
+	title: SITE.title,
+	description: SITE.description,
+	canonical: getCanonical(getHomePermalink()),
+};
+---
+
+
+<Layout {meta}>
+
+  <span style="font-family:'Verdana'"></span>
+    <div id="phaserCanvas"></div>
+
+</Layout>
+
+<script>
+
+      window.insideApnea = {
+        /**
+         * The root path that contains all assets for the app. Make sure the path ends with a slash.
+         */
+        basePath: '../insideApnea/',
+
+        assetsPath: 'assets/',
+
+        /**
+         * Provides support for CORS, defining how the element handles crossorigin requests,
+         * thereby enabling the configuration of the CORS requests for the element's fetched data.
+         *
+         * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
+         * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+         */
+        crossOrigin: '',
+
+        /**
+         * The root path that contains all assets for the profiles app.
+         * This is expected to be a folder that exists inside the root path.
+         * Make sure the path ends with a slash.
+         */
+        profilesPath: 'profiles/',
+      };
+</script>
+<script src="../insideApnea/bundle.js" defer></script>

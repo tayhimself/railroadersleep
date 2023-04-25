@@ -1,0 +1,40 @@
+#phaserCanvas {
+  width: "100%";
+  height: 80vh;
+}
+
+@font-face {
+  font-family: "Avenir Black";
+  src: url("../fonts/Avenir-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Avenir Book";
+  src: url("../fonts/Avenir-Book.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Avenir Heavy";
+  src: url("../fonts/Avenir-Heavy.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Avenir Light";
+  src: url("../fonts/Avenir-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Avenir Medium";
+  src: url("../fonts/Avenir-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Verdana";
+  src: url("../fonts/verdana.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Verdana Bold";
+  font-weight: bold;
+  src: url("../fonts/verdana.ttf") format("truetype");
+}

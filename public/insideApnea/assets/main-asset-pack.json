@@ -1,0 +1,24 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/data/apnea-links.json",
+                "type": "json",
+                "key": "apnea-links"
+            },
+            {
+                "atlasURL": "assets/graphics/game-graphics.json",
+                "textureURL": "assets/graphics/game-graphics.png",
+                "type": "atlas",
+                "key": "game-graphics"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}

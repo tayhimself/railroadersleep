@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "Verdana";
+  src: url("../fonts/verdana.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Verdana Bold";
+  font-weight: bold;
+  src: url("../fonts/verdana.ttf") format("truetype");
+}

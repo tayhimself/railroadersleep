@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Verdana";
+  src: url("../../assets/fonts/verdana.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Verdana Bold";
+  font-weight: bold;
+  src: url("../../assets/fonts/verdanab.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "17_calibri";
+  src: url("../../assets/fonts/17_calibri.ttf") format("opentype");
+}
