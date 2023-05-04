@@ -1,0 +1,33 @@
+---
+import { SITE } from "~/config.mjs";
+import { getCanonical, getHomePermalink } from "~/utils/permalinks";
+
+import Layout from "~/layouts/PageLayout.astro";
+const meta = {
+	title: "The Caffeine Challenge",
+	description: SITE.description,
+	canonical: getCanonical(getHomePermalink()),
+};
+---
+
+<Layout {meta}>
+	<div class="h-[90vh] md:h-[70vh]">
+		<iframe
+			id="caffeine-challenge"
+			title="Caffeine Challenge"
+			src="../caffeine-challenge/story.html"
+		>
+		</iframe>
+	</div>
+</Layout>
+<script type="application/javascript">
+	function resizeIFrameToFitContent(iFrame) {
+		iFrame.width = iFrame.parentElement.scrollWidth;
+		iFrame.height = iFrame.parentElement.scrollHeight;
+	}
+
+	window.addEventListener("DOMContentLoaded", function (e) {
+		var iFrame = document.getElementById("caffeine-challenge");
+		resizeIFrameToFitContent(iFrame);
+	});
+</script>
