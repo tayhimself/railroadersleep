@@ -14,4 +14,4 @@ People with obstructive sleep apnea (OSA) experience the consequences of poor sl
 
 Women with obstructive sleep apnea may not snore as loudly as men with the disorder, but are more apt to report symptoms of depression and insomnia.
 
-Obstructive sleep apnea forces the heart and blood vessels to work harder. If left untreated, it may cause high blood pressure, heart disease, stroke, diabetes, and impotence.
+Obstructive sleep apnea forces the heart and blood vessels to work harder because when you are not breathing oxygen levels in your blood fall. If left untreated, it may cause high blood pressure, heart disease, stroke, diabetes, and impotence, and has been associated with a shorter lifespan.
