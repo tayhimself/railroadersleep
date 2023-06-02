@@ -1,6 +1,6 @@
 ---
 import Layout from "~/layouts/PageLayout.astro";
-import Item from "~/components/blog/TourItem.astro";
+import TourCards from "~/components/blog/TourCards.astro";
 import TourModal from "~/components/widgets/TourModal.astro";
 import { fetchPosts, fetchPostsByFeature } from "~/utils/posts";
 const posts = await fetchPostsByFeature("Performance");
@@ -11,7 +11,7 @@ const {} = Astro.props;
 	<div
 		class="container mx-auto px-4 max-w-4xl prose dark:prose-invert dark:prose-headings:text-slate-300 prose-lg prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg mt-8 mb-12"
 	>
-		<article>
+		<article class="show-toast-on-scroll">
 			<h1
 				class="px-4 mb-0 max-w-3xl mx-auto text-center text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
 			>
@@ -30,16 +30,15 @@ const {} = Astro.props;
 			</div>
 		</article>
 	</div>
-	<div
-		class="px-4 md:px-12 lg:px:16 my-4 md:my-8 grid gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 place-items-stretch"
-	>
-		{
-			posts.map((post) => {
-				return <Item post={post} />;
-			})
-		}
-	</div>
 
+  <div class="toast toast-top my-24 hidden animate-in slide-in-from-bottom duration-500" id="caffeine-toast">
+		<div class="alert alert-info">
+			<div>
+				Take the <a href="caffeine-interactive/" class="link">Caffeine Challenge!</a>
+			</div>
+		</div>
+	</div>
+  <TourCards posts={posts} />
 	<hr
 		class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
 	/>
@@ -59,3 +58,22 @@ const {} = Astro.props;
 
 	<script></script>
 </Layout>
+
+<script>
+	const callback = function (entries) {
+		entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        document.getElementById('caffeine-toast').classList.remove("hidden");
+      } else {
+        document.getElementById('caffeine-toast').classList.add("hidden");
+      }
+		});
+	};
+
+	const observer = new IntersectionObserver(callback);
+
+	const targets = document.querySelectorAll(".show-toast-on-scroll");
+	targets.forEach(function (target) {
+		observer.observe(target);
+	});
+</script>

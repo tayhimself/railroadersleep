@@ -1,10 +1,10 @@
 ---
 import Layout from "~/layouts/BlogLayout.astro";
-import Item from "~/components/blog/TourItem.astro";
 import TourModal from "~/components/widgets/TourModal.astro";
-import { fetchPosts, fetchPostsByFeature } from "~/utils/posts";
+import { fetchPostsByFeature } from "~/utils/posts";
 const posts = await fetchPostsByFeature("Sleep");
 import { Content as Introduction } from "~/../data/tours/sleep-introduction.md";
+import TourCards from "~/components/blog/TourCards.astro";
 
 const {} = Astro.props;
 ---
@@ -12,21 +12,35 @@ const {} = Astro.props;
 <Layout>
 	<Fragment slot="title">Sleep Disorders</Fragment>
 
-		<div
-			class="container mx-auto px-6 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg pb-8"
-		>
-			<Introduction />
-		</div>
 	<div
-		class="px-4 md:px-12 lg:px:16 my-4 md:my-8 grid gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 place-items-stretch"
+		class="container mx-auto px-6 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg pb-8 lg:pb-12"
 	>
-		{
-			posts.map((post) => {
-				return <Item post={post} />;
-			})
-		}
+		<Introduction />
 	</div>
 
+  <TourCards posts={posts} />
+
+  <div class="toast">
+    <div class="alert alert-info">
+      <div>
+        <span>New message arrived.</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="toast toast-top toast-end">
+    <div class="alert alert-info">
+      <div>
+        <span>New mail arrived.</span>
+      </div>
+    </div>
+    <div class="alert alert-success">
+      <div>
+        <span>Message sent successfully.</span>
+      </div>
+    </div>
+  </div>
 	<hr
 		class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
 	/>

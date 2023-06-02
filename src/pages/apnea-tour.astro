@@ -49,44 +49,52 @@ const {} = Astro.props;
 ---
 
 <Layout>
-  <Fragment slot="title">Sleep Apnea</Fragment>
+	<Fragment slot="title">Sleep Apnea</Fragment>
 
-		<article>
+	<div class="toast my-8 mx-8 hidden animate-in slide-in-from-bottom duration-500" id="apnea-toast">
+		<div class="alert alert-info">
+			<div>
+				Check out our <a href="inside-apnea/" class="link">Sleep Apnea Interactive</a>
+			</div>
+		</div>
+	</div>
 
+	<article>
+		<div
+			class="container mx-auto px-6 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg"
+		>
+			<Introduction />
+		</div>
+		<div class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-5xl">
 			<div
-				class="container mx-auto px-6 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg "
+				class="grid gap-6 md:gap-12 grid-cols-1 md:grid-cols-2 place-items-stretch"
 			>
-        <Introduction />
+				{
+					actions.map((action) => (
+						<ActionCard title={action.title} link={action.link} />
+					))
+				}
 			</div>
-			<div class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-5xl">
-				<div
-					class="grid gap-6 md:gap-12 grid-cols-1 md:grid-cols-2 place-items-stretch"
-				>
-					{
-						actions.map((action) => (
-							<ActionCard title={action.title} link={action.link} />
-						))
-					}
-				</div>
-			</div>
-			<div class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-w-5xl">
-				<Quote
-					quote="After the first night that I wore the CPAP air machine and slept all night, the next day, when I woke up, I said to myself, 'This is what it's like to sleep all night? This is wonderful!' I felt like a million dollars. I felt like Superman.  Ever since, I've used the CPAP air machine every night when I go to bed, and it’s improved my health. It's also made my life less stressful, because I'm more rested. I bought another CPAP air machine, and I keep that up at my hotel at my away-from-home terminal. Our job, our safety, depends on how rested we are."
-					quote_author="Mark Kramer, locomotive engineer"
-				/>
-			</div>
-			<hr
-				class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
+		</div>
+		<div class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-w-5xl">
+			<Quote
+				quote="After the first night that I wore the CPAP air machine and slept all night, the next day, when I woke up, I said to myself, 'This is what it's like to sleep all night? This is wonderful!' I felt like a million dollars. I felt like Superman.  Ever since, I've used the CPAP air machine every night when I go to bed, and it’s improved my health. It's also made my life less stressful, because I'm more rested. I bought another CPAP air machine, and I keep that up at my hotel at my away-from-home terminal. Our job, our safety, depends on how rested we are."
+				quote_author="Mark Kramer, locomotive engineer"
 			/>
+		</div>
+		<hr
+			class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
+		/>
 
-			<div
-				class="container mx-auto px-6 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg "
-			>
-			<section class="container mx-auto my-8 py-8 md:max-4xl lg:max-w-5xl">
-				<h3 class="font-semibold text-xl text-center" id="what-is-osa">
+		<div
+			class="container mx-auto px-6 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg"
+		>
+
+			<section class="container mx-auto my-4 md:max-4xl lg:max-w-5xl show-toast-on-scroll">
+				<h2 class="font-semibold text-center py-4" id="what-is-osa">
 					What is OSA?
-				</h3>
-				<div class="container mx-auto mt-8">
+				</h2>
+				<div class="container mx-auto mt-8 lg:mt-12">
 					<YouTube
 						embed_url={whatIsOsa.frontmatter.video_url}
 						title={whatIsOsa.frontmatter.video_title}
@@ -98,11 +106,11 @@ const {} = Astro.props;
 			<hr
 				class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
 			/>
-			<section class="container mx-auto my-8 py-8 md:max-4xl lg:max-w-5xl">
-				<h3 class="font-semibold text-xl text-center" id="getting-a-diagnosis">
+			<section class="container mx-auto my-4 md:max-4xl lg:max-w-5xl">
+				<h2 class="font-semibold text-center py-4" id="getting-a-diagnosis">
 					Getting a diagnosis
-				</h3>
-				<div class="container mx-auto mt-8">
+				</h2>
+				<div class="container mx-auto mt-8 lg:mt-12">
 					<YouTube
 						embed_url={gettingADiagnosis.frontmatter.video_url}
 						title={gettingADiagnosis.frontmatter.video_title}
@@ -118,11 +126,11 @@ const {} = Astro.props;
 			<hr
 				class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
 			/>
-			<section class="container mx-auto my-8 py-8 md:max-4xl lg:max-w-5xl">
-				<h3 class="font-semibold text-xl text-center" id="living-with-osa">
+			<section class="container mx-auto my-4 md:max-4xl lg:max-w-5xl">
+				<h2 class="font-semibold text-center py-4" id="living-with-osa">
 					Living with OSA
-				</h3>
-				<div class="container mx-auto mt-8">
+				</h2>
+				<div class="container mx-auto mt-8 lg:mt-12">
 					<YouTube
 						embed_url={livingWithOsa.frontmatter.video_url}
 						title={livingWithOsa.frontmatter.video_title}
@@ -134,21 +142,40 @@ const {} = Astro.props;
 			<hr
 				class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
 			/>
-			<section class="container mx-auto mt-8 md:mt-12 md:max-4xl lg:max-w-5xl">
-				<h3 class="font-semibold text-xl text-center" id="available-treatments">
+			<section class="container mx-auto my-4 md:max-4xl lg:max-w-5xl">
+				<h2 class="font-semibold text-center py-4" id="available-treatments">
 					Available Treatments
-				</h3>
-				<div class="container mx-auto mt-8">
-          <YouTube
-          embed_url={availableTreatments.frontmatter.video_url}
-          title={availableTreatments.frontmatter.video_title}
-          duration={availableTreatments.frontmatter.video_duration}
-        />
+				</h2>
+				<div class="container mx-auto mt-8 lg:mt-12">
+					<YouTube
+						embed_url={availableTreatments.frontmatter.video_url}
+						title={availableTreatments.frontmatter.video_title}
+						duration={availableTreatments.frontmatter.video_duration}
+					/>
 				</div>
-        <AvailableTreatmentsContent />
+				<AvailableTreatmentsContent />
 			</section>
-      </div>
-		</article>
+		</div>
+	</article>
 
 	<script></script>
 </Layout>
+
+<script>
+	const callback = function (entries) {
+		entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        document.getElementById('apnea-toast').classList.remove("hidden");
+      } else {
+        document.getElementById('apnea-toast').classList.add("hidden");
+      }
+		});
+	};
+
+	const observer = new IntersectionObserver(callback);
+
+	const targets = document.querySelectorAll(".show-toast-on-scroll");
+	targets.forEach(function (target) {
+		observer.observe(target);
+	});
+</script>

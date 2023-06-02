@@ -1,6 +1,6 @@
 ---
 import Layout from "~/layouts/PageLayout.astro";
-import Item from "~/components/blog/TourItem.astro";
+import TourCards from "~/components/blog/TourCards.astro";
 import TourModal from "~/components/widgets/TourModal.astro";
 import { fetchPosts, fetchPostsByFeature } from "~/utils/posts";
 const posts = await fetchPostsByFeature("Railroaders");
@@ -32,15 +32,7 @@ const {} = Astro.props;
 			</div>
 		</article>
 	</div>
-	<div
-		class="px-4 md:px-8 lg:px:12 my-4 md:my-8 grid gap-6 lg:gap-12 grid-cols-1 md:grid-cols-2 place-items-stretch"
-	>
-		{
-			posts.map((post) => {
-				return <Item post={post} />;
-			})
-		}
-	</div>
+  <TourCards posts={posts} />
 
 	<hr
 		class="my-12 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
