@@ -1,16 +1,19 @@
 ---
+import Icon from "astro-icon";
 const { quote, quote_author, class: className = "text-sm" } = Astro.props;
 ---
 
 {
 	quote && quote_author && (
-  <figure>
-  <blockquote class="-mb-8 -pb-4">
-    <p class="text-lg">{quote}</p>
-  </blockquote>
-  <div class="text-base text-right -mt-4">
-    - {quote_author}
-  </div>
-</figure>
+    <div class="px-4" >
+			<blockquote class="flex flex-row">
+				<Icon
+					name="mdi:format-quote-open"
+					class="w-16 h-16 text-gray-400 flex-none"
+				/>
+				<p class="text-lg grow">{quote}</p>
+			</blockquote>
+			<div class="text-base text-right"> - {quote_author}</div>
+    </div>
 	)
 }
