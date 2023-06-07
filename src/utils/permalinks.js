@@ -19,6 +19,7 @@ export const cleanSlug = (text) => slugify(trimSlash(text));
 
 export const BLOG_BASE = cleanSlug(BLOG?.blog?.pathname);
 export const POST_BASE = cleanSlug(BLOG?.post?.pathname);
+export const VIDEO_BASE = cleanSlug(BLOG?.video?.pathname);
 export const CATEGORY_BASE = cleanSlug(BLOG?.category?.pathname);
 export const TAG_BASE = cleanSlug(BLOG?.tag?.pathname);
 
@@ -38,6 +39,9 @@ export const getPermalink = (slug = '', type = 'page') => {
 
 		case 'post':
 			return createPath(basePathname, POST_BASE, _slug);
+
+    case 'video':
+      return createPath(basePathname, VIDEO_BASE, _slug);
 
 		case 'page':
 		default:

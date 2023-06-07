@@ -2,7 +2,7 @@
 import { SITE, BLOG } from "~/config.mjs";
 
 import Layout from "~/layouts/BlogLayout.astro";
-import BlogList from "~/components/blog/List.astro";
+import List from "~/components/blog/List.astro";
 import Pagination from "~/components/atoms/Pagination.astro";
 
 import { fetchPosts } from "~/utils/posts";
@@ -63,7 +63,7 @@ const meta = {
         {category}
       </h1>
 		</Fragment>
-		<BlogList posts={page.data} />
+		<List posts={page.data} />
 		<Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
 	</div>
 </Layout>

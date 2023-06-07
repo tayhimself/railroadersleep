@@ -1,5 +1,5 @@
 export const SITE = {
-	name: 'RailroaderSleep',
+	name: 'RailroaderSleep Beta',
 
 	origin: 'https://railroadersleep.netlify.app/',
 	basePathname: '',
@@ -26,6 +26,11 @@ export const BLOG = {
 		disabled: false,
 		pathname: '', // empty for /some-post, value for /pathname/some-post
 	},
+
+  video: {
+    disabled: false,
+    pathname: 'videos',
+  },
 
 	category: {
 		disabled: false,

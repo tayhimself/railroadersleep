@@ -46,7 +46,7 @@ const load = async function () {
 	);
 
 	const normalizedPosts = Object.keys(posts).map(async (key) => {
-		const post = await posts[key];
+		const post = posts[key];
 		return await getNormalizedPost(post);
 	});
 
@@ -108,5 +108,13 @@ export const fetchPostsByFeature = async (feature) => {
     .sort((a, b) => {
 			return a.sort - b.sort;
 		});
+	return posts;
+};
+
+/** */
+export const fetchPostsWithVideos = async () => {
+	let posts = await fetchPosts();
+	posts = posts
+		.filter((post) => post.video_url)
 	return posts;
 };
