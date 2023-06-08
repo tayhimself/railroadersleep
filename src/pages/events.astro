@@ -1,0 +1,72 @@
+---
+import { SITE } from "~/config.mjs";
+import { getCanonical, getPermalink } from "~/utils/permalinks";
+import Layout from "~/layouts/BlogLayout.astro";
+import EventForm from "~/components/EventForm.astro";
+import { upcomingEvents, pastEvents} from "~/utils/events.js";
+import EventCard from "~/components/EventCard.astro";
+
+
+const meta = {
+  title: "Resources to connect with other families",
+  description: SITE.description,
+  canonical: getCanonical(getPermalink("events")),
+};
+
+const upcoming = await upcomingEvents();
+const past = await pastEvents();
+---
+
+<Layout {meta}>
+  <Fragment slot="title">
+    <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 tracking-wide max-w-4xl">
+      Events
+    </span>
+  </Fragment>
+
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-xl lg:text-2xl lg:tracking-tight">
+      A curated list of events that you may find interesting.
+    </h2>
+  </div>
+
+  <section class="mx-auto py-16 mt-8 bg-base-200">
+    <h2 class="text-2xl lg:text-3xl font-bold lg:tracking-tight text-center">Upcoming Events</h2>
+    <div class="grid grid-flow-row auto-rows-max lg:grid-cols-2 mt-16 gap-16">
+      {upcoming.map((event) => <EventCard {event} />)}
+    </div>
+  </section>
+
+  <section class="mx-auto py-16 bg-base-100 grid place-items-center">
+    <h2 class="text-2xl lg:text-3xl font-bold lg:tracking-tight text-center mb-8">Add an Event</h2>
+    <EventForm />
+  </section>
+
+  { past.length > 0 &&
+  <section class="mx-auto py-16 bg-base-200">
+    <h2 class="text-2xl lg:text-3xl font-bold lg:tracking-tight text-center">Past Events</h2>
+    <div class="flex justify-center my-4">
+      <button class="btn btn-ghost">Show past events</button>
+    </div>
+
+    <div class="past hidden">
+      <div class="grid grid-flow-row auto-rows-max lg:grid-cols-2 mt-16 gap-16">
+        {past.map((event) => <EventCard {event} />)}
+      </div>
+    </div>
+  </section>
+  }
+
+
+</Layout>
+<script>
+  // make a toggle button to show past events
+  const toggle = document.querySelector('button.btn-ghost');
+  const pastEvents = document.querySelectorAll('.past');
+  toggle.addEventListener('click', () => {
+    console.log('clicked');
+    pastEvents.forEach(event => {
+      event.classList.toggle('hidden');
+    })
+  })
+</script>

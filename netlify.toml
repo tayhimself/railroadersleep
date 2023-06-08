@@ -1,3 +1,4 @@
 [build]
+  functions = "./functions"
   publish = "dist"
   command = "pnpm run build"

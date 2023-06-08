@@ -1,0 +1,21 @@
+---
+import DateDisplay from "~/components/widgets/DateDisplay.astro";
+const { event } = Astro.props;
+---
+
+<div class="flex justify-center">
+  <div class="block p-6 rounded-lg shadow-lg m-4 bg-base-200">
+    <div class="flex flex-row justify-around w-80 md:w-96">
+      <a href={event.EventURL} target="_blank" rel="noreferer noopner">
+        <DateDisplay date={new Date(event.Date)} />
+      </a>
+      <div class="md:ml-4">
+        <a href={event.EventURL} target="_blank" rel="noopner">
+          <p class="font-semibold text-xl mb-2 base-content">{event.GroupName}</p>
+          <p class="font-semibold base-content mb-4">{event.Date}</p>
+          <p class="base-content font-light">{event.Description}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

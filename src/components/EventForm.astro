@@ -1,0 +1,59 @@
+---
+---
+
+<div class="card bg-base-200 shadow-2xl max-w-xl">
+  <div class="card-body">
+    <h3 class="card-title text-center">
+      Add an event that may help you and other families connect. We will review and add it to the list.
+    </h3>
+    <form name="Event Form" method="POST" netlify-honeypot="igbo"
+    data-netlify="true">
+      <div class="form-control w-full my-4">
+        <label class="label">
+          <span class="label-text text-lg ">What is the event or group name?</span>
+        </label>
+        <input type="text" placeholder="Event or meeting group title" class="input input-bordered" name="group" />
+      </div>
+
+      <div class="form-control w-full my-4">
+        <label class="label">
+          <span class="label-text text-lg ">Please Describe Briefly:</span>
+        </label>
+        <textarea class="textarea textarea-bordered h-24" placeholder="Please provide a brief description of the event. If it's an ongoing (e.g. monthly) event please let us know here." name="description"></textarea>
+      </div>
+
+      <div class="form-control w-full my-4">
+        <label class="label">
+          <span class="label-text text-lg ">Event Date:</span>
+        </label>
+        <input type="date" class="input input-bordered" name="date"/>
+      </div>
+
+      <div class="form-control w-full my-4">
+        <label class="label">
+          <span class="label-text text-lg ">Event Website:</span>
+        </label>
+        <input type="url" placeholder="https://" class="input input-bordered" name="site" value="https://"/>
+      </div>
+      <div class="form-control w-full my-4">
+        <label class="label">
+          <span class="label-text text-lg ">Event Contacts:</span>
+        </label>
+        <input type="email" placeholder="Event organizer email" class="input input-bordered" name="email"/>
+        <input type="tel" placeholder="Event organizer phone number (optional)" class="input input-bordered" name="phone"/>
+      </div>
+
+      <p class="hidden">
+        <label>
+          Fill this out if you’re a bot: <input name="igbo" />
+        </label>
+      </p>
+
+      <div class="card-actions justify-end mt-8">
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+      </div>
+    </form>
+  </div>
+</div>
