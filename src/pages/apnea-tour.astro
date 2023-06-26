@@ -3,12 +3,25 @@ import Layout from "~/layouts/BlogLayout.astro";
 import YouTube from "~/components/core/YouTube.astro";
 import ActionCard from "~/components/atoms/ActionCard.astro";
 import Quote from "~/components/atoms/Quote.astro";
-const post = {
-	video_url: "https://player.vimeo.com/video/794546557?h=bc1ec8301d",
-	video_title: "Apnea on the Rails: Mark's Story",
-	video_duration: "1:23",
-	video_description: "Apnea on the Rails: Mark's Story",
+const living_with_apnea = {
+	video_url: "https://player.vimeo.com/video/839708968?h=7d018cd380",
+	video_title: "What does living with obstructive sleep apnea feel like?",
+	video_duration: "1:01",
+	video_description: "Kevin Sexton, General Chairman of the Brotherhood of Locomotive Engineers and Trainmen, describes his experience with undiagnosed sleep apnea.",
 };
+const treatments = {
+  video_url: "https://player.vimeo.com/video/839724637?h=5791187edf",
+  video_title: "How does it feel to be treated for obstructive sleep apnea?",
+  video_duration: "00:25",
+  video_description: "Kevin Sexton, General Chairman of the Brotherhood of Locomotive Engineers and Trainmen, describes his experience after receiving treatment for sleep apnea.",
+};
+const diagnosis = {
+  video_url: "https://player.vimeo.com/video/839725111?h=a39a811a43",
+  video_title: "Why should you consider screening for obstructive sleep apnea?",
+  video_duration: "1:42",
+  video_description: "Kevin Sexton, General Chairman of the Brotherhood of Locomotive Engineers and Trainmen, provides advice for fellow railroaders."
+};
+
 import { Content as WhatIsOsaContent } from "~/../data/tours/what-is-osa.md";
 import * as whatIsOsa from "~/../data/tours/what-is-osa.md";
 import { Content as GettingADiagnosisContent } from "~/../data/tours/getting-a-diagnosis.md";
@@ -117,6 +130,13 @@ const {} = Astro.props;
 						duration={gettingADiagnosis.frontmatter.video_duration}
 					/>
 				</div>
+        <div class="container mx-auto mt-8 lg:mt-12">
+          <YouTube
+            embed_url={diagnosis.video_url}
+            title={diagnosis.video_title}
+            duration={diagnosis.video_duration}
+          />
+        </div>
 				<GettingADiagnosisContent />
 				<Quote
 					quote="A guy that I worked with came in with a line on his face, and we started talking about that. He told me about his mask, and we started talking about snoring and everything else, and I thought wow, you know, I think I have it. And then I went in for a sleep study. I’ve been on the CPAP machine since 2000. If I don’t use my machine, my sleep is terrible. I have a machine at home, and another that I leave at my away-from-home terminal."
@@ -137,6 +157,13 @@ const {} = Astro.props;
 						duration={livingWithOsa.frontmatter.video_duration}
 					/>
 				</div>
+        <div class="container mx-auto mt-8 lg:mt-12">
+          <YouTube
+            embed_url={living_with_apnea.video_url}
+            title={living_with_apnea.video_title}
+            duration={living_with_apnea.video_duration}
+          />
+        </div>
 				<LivingWithOsaContent />
 			</section>
 			<hr
@@ -153,6 +180,13 @@ const {} = Astro.props;
 						duration={availableTreatments.frontmatter.video_duration}
 					/>
 				</div>
+        <div class="container mx-auto mt-8 lg:mt-12">
+          <YouTube
+            embed_url={treatments.video_url}
+            title={treatments.video_title}
+            duration={treatments.video_duration}
+          />
+        </div>
 				<AvailableTreatmentsContent />
 			</section>
 		</div>

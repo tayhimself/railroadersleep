@@ -5,7 +5,13 @@ import { fetchPostsByFeature } from "~/utils/posts";
 const posts = await fetchPostsByFeature("Sleep");
 import { Content as Introduction } from "~/../data/tours/sleep-introduction.md";
 import TourCards from "~/components/blog/TourCards.astro";
-
+import YouTube from "~/components/core/YouTube.astro";
+const embed_video = {
+  "url": "https://player.vimeo.com/video/839700640?h=49d9497772",
+  "title": "Advice For Other Railroaders",
+  "duration": "0:25",
+  "description": "Kevin Sexton, General Chairman of the Brotherhood of Locomotive Engineers and Trainmen, provides advice for fellow railroaders."
+}
 const {} = Astro.props;
 ---
 
@@ -16,6 +22,9 @@ const {} = Astro.props;
 		class="container mx-auto px-6 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg pb-8 lg:pb-12"
 	>
 		<Introduction />
+    <div class="container max-w-3xl mx-auto">
+      <YouTube embed_url={embed_video.url} title={embed_video.title} duration={embed_video.duration} description={embed_video.description} />
+    </div>
 	</div>
 
   <TourCards posts={posts} />

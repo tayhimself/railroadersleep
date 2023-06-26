@@ -3,7 +3,14 @@ import Layout from "~/layouts/PageLayout.astro";
 import TourCards from "~/components/blog/TourCards.astro";
 import TourModal from "~/components/widgets/TourModal.astro";
 import { fetchPosts, fetchPostsByFeature } from "~/utils/posts";
+import YouTube from "~/components/core/YouTube.astro";
 const posts = await fetchPostsByFeature("Railroaders");
+const embed_video = {
+  "url": "https://player.vimeo.com/video/839595071?h=c61dd5174c",
+  "title": "Why sleep is important for railroaders",
+  "duration": "0:25",
+  "description": "Kevin Sexton, General Chairman of the Brotherhood of Locomotive Engineers and Trainmen, describes the importance of sleep."
+}
 const {} = Astro.props;
 ---
 
@@ -30,6 +37,9 @@ const {} = Astro.props;
           Better sleep can lead to better health. Members of your household and support network play an important role in achieving this, and may benefit personally from these tactics as well.
           </p>
 			</div>
+      <div class="container max-w-3xl mx-auto">
+        <YouTube embed_url={embed_video.url} title={embed_video.title} duration={embed_video.duration} description={embed_video.description} />
+      </div>
 		</article>
 	</div>
   <TourCards posts={posts} />
