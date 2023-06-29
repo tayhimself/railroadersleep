@@ -25,14 +25,15 @@ const items = [
 ];
 ---
 
-<div class="px-4 py-16 mx-auto max-w-6xl lg:py-20">
-	<div class="max-w-xl sm:mx-auto lg:max-w-2xl">
-		<div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-			<h2 class="max-w-lg mb-4 text-2xl font-bold leading-none tracking-tight sm:text-3xl md:mx-auto font-heading">
-				Frequently Asked Questions
+<section class="scroll-mt-16" id="FAQ">
+	<div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
+		<div class="max-w-5xl mb-10 md:mx-auto md:mb-12">
+			<h2 class="text-center text-4xl font-bold leading-tighter tracking-tighter mb-4 lg:mb-8 font-heading">
+        <span
+        class="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-400 whitespace-nowrap"
+        >Frequently Asked Questions</span
+				>
 			</h2>
-		</div>
-	</div>
 	<div class="max-w-screen-xl sm:mx-auto">
 		<div class="grid grid-cols-1 gap-x-8 gap-y-8 lg:gap-x-16 md:grid-cols-2">
 			{
@@ -40,9 +41,8 @@ const items = [
 					<div class="space-y-8">
 						{subitems.map(({ question, answer }) => (
 							<div>
-								<p class="mb-4 text-lg font-bold">
+								<p class="mb-4 text-lg font-bold" set:html={question}>
 									<Icon name="tabler:arrow-down-right" class="w-7 h-7 text-primary-500 inline-block icon-bold" />
-									{question}
 								</p>
 								{answer.split('\n\n').map((paragraph) => (
 									<p class="text-gray-700 dark:text-gray-400 mb-2" set:html={paragraph} />
