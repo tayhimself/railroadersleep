@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon';
+import { SITE } from "~/config.mjs"
 import Logo from '~/components/atoms/Logo.astro';
 import ToggleTheme from '~/components/core/ToggleTheme.astro';
 import ToggleMenu from '~/components/core/ToggleMenu.astro';
@@ -30,15 +30,17 @@ interface Interactive {
 ---
 
 <header
-	class="sticky top-0 z-40 flex-none mx-auto w-full bg-white md:bg-white/90 dark:bg-slate-900 dark:md:bg-slate-900/90 md:backdrop-blur-sm border-b dark:border-b-0"
+	class="sticky top-0 z-40 flex-none mx-auto w-full bg-white md:bg-white/90 dark:bg-slate-900 dark:md:bg-slate-900/90 md:backdrop-blur-sm border-b dark:border-b-0 h-14"
 >
-	<div class="py-3 px-3 mx-auto w-full md:flex md:justify-between max-w-6xl md:px-4">
+	<div class="px-2 mx-auto w-full md:flex md:justify-between max-w-6xl md:px-4">
 		<div class="flex justify-between">
 			<a class="flex items-center" href={getHomePermalink()}>
 				<Logo />
+        <span class="px-2 text-xl font-extrabold text-gray-900 whitespace-nowrap dark:text-white">{SITE.title}
+        </span>
 			</a>
 			<div class="flex items-center md:hidden">
-				<ToggleTheme />
+        <ToggleTheme />
 				<ToggleMenu />
 			</div>
 		</div>
@@ -50,29 +52,6 @@ interface Interactive {
 			<ul
 				class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto text-lg md:text-base"
 			>
-      <!--
-      <li>
-        <a
-          class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-          href={getPermalink('explore-sleep')}
-          >Explore Sleep
-        </a>
-      </li>
-       <li>
-        <a
-          class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-          href={getPermalink('improve-sleep')}
-          >Improve Sleep
-        </a>
-      </li>
-      <li>
-        <a
-          class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-          href={getPermalink('balance')}
-          >Balance
-        </a>
-      </li>
-      -->
         <li class="dropdown">
           <button
             class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"

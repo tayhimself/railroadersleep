@@ -1,10 +1,10 @@
 export const SITE = {
-	name: 'RailroaderSleep Beta',
+	name: 'Railroaders’ Guide to Healthy Sleep',
 
 	origin: 'https://railroadersleep.netlify.app/',
 	basePathname: '',
 
-	title: 'Railroader Sleep Beta',
+	title: 'Railroaders’ Guide to Healthy Sleep',
 	description: 'The Railroaders’ Guide to Healthy Sleep is an educational initiative for railroad workers about the importance of sleep health.',
 
   googleAnalyticsId: false, // or "G-XXXXXXXXXX",
