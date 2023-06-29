@@ -47,11 +47,12 @@ const {} = Astro.props;
     posts.map((post) => {
       return <>
       <input type="checkbox" id={post.slug} class="modal-toggle" />
-      <label for={post.slug} class="modal cursor-pointer">
-        <label class="modal-box relative max-w-3xl" for="">
+      <div class="modal cursor-pointer">
+        <div class="modal-box relative max-w-3xl">
           <TourModal post={post} />
-        </label>
-      </label>
+        </div>
+        <label class="modal-backdrop" for={post.slug}>Close</label>
+      </div>
       </>
     })
   }

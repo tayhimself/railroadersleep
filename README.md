@@ -18,6 +18,7 @@
     - [Deploy](#deploy)
       - [Deploy to production (manual)](#deploy-to-production-manual)
   - [Acknowledgements](#acknowledgements)
+  - [cleaning github diffs for pdf export](#cleaning-github-diffs-for-pdf-export)
 
 </details>
 
@@ -185,3 +186,15 @@ prefer.
 
 Modified from AstroWind, initially created by [onWidget](https://onwidget.com) and maintained by a community of [contributors](https://github.com/onwidget/astrowind/graphs/contributors).
 
+## cleaning github diffs for pdf export
+```javascript
+document.querySelector("#repository-container-header").hidden = true
+document.querySelector(".Subhead").hidden = true
+document.querySelector(".position-relative, .js-header-wrapper").hidden = true
+document.querySelector("#all_commit_comments").hidden = true
+document.querySelector(".commit, .full-commit").hidden = true
+
+document.querySelector(".Layout-sidebar, .overflow-y-auto, .hx_Layout--sidebar, .js-notification-shelf-offset-top").hidden = true
+
+document.querySelector("div.thread-subscription-status").hidden = true
+```
