@@ -3,7 +3,7 @@ import { SITE } from "~/config.mjs"
 import Logo from '~/components/atoms/Logo.astro';
 import ToggleTheme from '~/components/core/ToggleTheme.astro';
 import ToggleMenu from '~/components/core/ToggleMenu.astro';
-
+import Search from "astro-pagefind/components/Search";
 import { getPermalink, getBlogPermalink, getHomePermalink } from '~/utils/permalinks';
 
 import { fetchPosts } from '~/utils/posts';
@@ -98,13 +98,57 @@ interface Interactive {
         >
       </li>
       <li>
-        <a
-          class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-          href={getBlogPermalink()}>Articles</a
-        >
+        <Search />
       </li>
     </ul>
 
 		</nav>
 	</div>
 </header>
+
+<style is:global>
+  .pagefind-ui {
+    --pagefind-ui-scale: 0.85;
+    --pagefind-ui-primary: navy;
+    --pagefind-ui-text: black;
+    --pagefind-ui-border: slategrey;
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 0.25rem;
+    --pagefind-ui-font: sans-serif;
+
+    width: 50%;
+  }
+
+  .pagefind-ui.yellow {
+    --pagefind-ui-background: lightyellow;
+  }
+
+  .pagefind-ui.red {
+    --pagefind-ui-background: peachpuff;
+    width: 100%;
+  }
+
+  .pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 0px;
+    z-index: 9999;
+    padding: 0 2em 1em;
+    overflow-y: auto;
+    box-shadow:
+      0 10px 10px -5px rgba(0, 0, 0, 0.2),
+      0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: var(--pagefind-ui-border-radius);
+    border-bottom-left-radius: var(--pagefind-ui-border-radius);
+    background-color: var(--pagefind-ui-background);
+  }
+
+  .pagefind-ui .pagefind-ui__result-link {
+    color: var(--pagefind-ui-primary);
+  }
+
+  .pagefind-ui .pagefind-ui__result-excerpt {
+    color: var(--pagefind-ui-text);
+}
+</style>
