@@ -2,7 +2,7 @@
 import { SITE } from "~/config.mjs";
 import { getCanonical, getHomePermalink } from "~/utils/permalinks";
 
-import Layout from "~/layouts/PageLayout.astro";
+import Layout from "~/layouts/BlogLayout.astro";
 const meta = {
 	title: SITE.title,
 	description: SITE.description,
@@ -11,13 +11,15 @@ const meta = {
 ---
 
 <Layout {meta}>
-	<span style="font-family:'Avenir Black'"></span>
-	<span style="font-family:'Avenir Book'"></span>
-	<span style="font-family:'Avenir Heavy'"></span>
-	<span style="font-family:'Avenir Light'"></span>
-	<span style="font-family:'Avenir Medium'"></span>
-	<span style="font-family:'Verdana'"></span>
-	<div id="phaserCanvas"></div>
+  <div class="h-[70vh] md:my-auto">
+    <span style="font-family:'Avenir Black'"></span>
+    <span style="font-family:'Avenir Book'"></span>
+    <span style="font-family:'Avenir Heavy'"></span>
+    <span style="font-family:'Avenir Light'"></span>
+    <span style="font-family:'Avenir Medium'"></span>
+    <span style="font-family:'Verdana'"></span>
+    <div id="phaserCanvas"></div>
+  </div>
 </Layout>
 
 <script>
