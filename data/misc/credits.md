@@ -3,7 +3,7 @@ title: Credits
 
 ---
 
-The Railroaders' Guide to Healthy Sleep website was produced by the [U.S. Department of Transportation Volpe Center (Volpe)](https://www.volpe.dot.gov/) in Cambridge, MA, and is sponsored by the [Federal Railroad Administration (FRA)](https://railroads.dot.gov/), U.S. Department of Transportation (U.S. DOT). Originally launched on June 11, 2012, in collaboration with the Harvard Medical School Division of Sleep Medicine, the site was updated by the Volpe Center in 2015, serving as a major educational initiative for the railroad industry about the importance of sleep health.
+The Railroaders' Guide to Healthy Sleep website was produced by the [U.S. Department of Transportation Volpe Center (Volpe)](https://www.volpe.dot.gov/) in Cambridge, MA, and is sponsored by the [Federal Railroad Administration (FRA)](https://railroads.dot.gov/), U.S. Department of Transportation (U.S. DOT). Originally launched on June 11, 2012, in collaboration with the Harvard Medical School Division of Sleep Medicine, the site was updated by the Volpe Center in 2015, serving as a major educational initiative for the railroad industry about the importance of sleep health. The site was updated again in 2023 by many of the original investigators at Harvard Medical School to ensure the recommendations reflect the current state of the evidence.
 
 ### Project Team
 
@@ -12,11 +12,11 @@ Shala N. Blue, PhD
 Office of Research, Development, and Technology, FRA
 
 #### Project Lead
-Heidi D. Howarth, PhD
-Transportation Human Factors Division, Volpe
+Laura K. Barger, PhD
+Brigham and Women’s Hospital and Harvard Medical School
+
 
 #### Contract Teams
-Volpe Onsite Contractor
 Harvard Medical School, Division of Sleep Medicine
 
 #### Researchers, Physicians, and Sleep Professionals Interviewed
@@ -36,7 +36,7 @@ Ann E. Rogers, PhD, RN, FAAN, Emory University School of Medicine
 Robert Stickgold, PhD, Harvard Medical School
 
 #### Special Thanks
-The project team thanks Michael K. Coplen, the original FRA sponsor and a driving force on this project, for his dedication to the health and safety of railroaders. The team expresses appreciation for the following stakeholders’ contributions to and support of this project: American Short Line and Regional Railroad Association (ASLRRA), BNSF Railway, the Brotherhood of Locomotive Engineers and Trainmen (BLET), the International Association of Sheet Metal, Air, Rail and Transportation Workers, Transportation Division (SMART-TD), and Union Pacific Railroad. Special thanks also to Stephen M. Popkin, PhD (Volpe) and the project’s prior FRA sponsor, Rachel Grice, PhD. Finally, the team appreciates the contributions of Lynne Lamberg, medical writer and editor, to the content updates to the site in 2015, and the time and dedication of Juna Z. Snow, PhD, while serving as project Evaluator.
+The project team thanks Michael K. Coplen, the original FRA sponsor and a driving force on this project, for his dedication to the health and safety of railroaders. The team expresses appreciation for the following stakeholders’ contributions to and support of this project: American Short Line and Regional Railroad Association (ASLRRA), BNSF Railway, the Brotherhood of Locomotive Engineers and Trainmen (BLET), the International Association of Sheet Metal, Air, Rail and Transportation Workers, Transportation Division (SMART-TD), and Union Pacific Railroad. Special thanks also to Stephen M. Popkin, PhD (Volpe) and the project’s prior FRA sponsor, Rachel Grice, PhD. the time and dedication of Juna Z. Snow, PhD, while serving as project Evaluator, and critical contributions from members of the BLET, including Kevin Sexton, Vince Verna, and John Tolman.
 
 ---
 ### Medical Disclaimer
