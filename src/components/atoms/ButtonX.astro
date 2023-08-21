@@ -1,0 +1,10 @@
+---
+import { Icon } from "astro-icon";
+
+ const { class: className="", title, link } = Astro.props;
+ ---
+ <div class="flex flex-row content-evenly my-4">
+    <button id="previous-page" class="btn text-white bg-primary-600 hover:bg-primary-800 mx-auto" href={link}>
+      {title}<Icon name="tabler:arrow-right" class="mr-2 w-5 h-5" />
+    </button>
+ </div>

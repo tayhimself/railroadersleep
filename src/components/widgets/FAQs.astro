@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
+import { getPermalink } from '~/utils/permalinks';
 
 const items = [
 	[
@@ -19,7 +20,7 @@ const items = [
 		},
 		{
 			question: 'Do employers know who uses the site or its tools?',
-			answer: `No, they do not. Railroaders may access the site assured of their privacy. You can read the full Privacy Policy here.`,
+			answer: `No, they do not. Railroaders may access the site assured of their privacy. You can read the full <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="https://railroadersleep.fra.dot.gov/Privacy-Policy" target="_blank">Privacy Policy here</a>.`,
 		}
 	],
 ];
@@ -30,7 +31,7 @@ const items = [
 		<div class="max-w-5xl mb-10 md:mx-auto md:mb-12">
 			<h2 class="text-center text-4xl font-bold leading-tighter tracking-tighter mb-4 lg:mb-8 font-heading">
         <span
-        class="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-400 whitespace-nowrap"
+        class="bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-400"
         >Frequently Asked Questions</span
 				>
 			</h2>
@@ -57,9 +58,7 @@ const items = [
   <div class="mt-6 mx-auto text-center">
     <a
       class="btn text-white bg-primary-600 hover:bg-primary-800 mb-4 sm:mb-0"
-      href="https://github.com/onwidget/astrowind"
-      target="_blank"
-      rel="noopener"
+      href={getPermalink('faq')}
     >
     More questions and answers <Icon name="tabler:arrow-right" class="w-5 h-5 ml-1" />
     </a>

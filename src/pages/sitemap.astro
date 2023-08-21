@@ -1,0 +1,47 @@
+---
+import { SITE } from "~/config.mjs"
+import { getCanonical, getHomePermalink } from "~/utils/permalinks"
+import Layout from "~/layouts/PageLayout.astro"
+import Previous from "~/components/atoms/Previous.astro"
+import xml2js from "xml2js"
+
+const meta = {
+  title: SITE.title + " - sitemap",
+  description: SITE.description,
+  canonical: getCanonical(getHomePermalink()),
+}
+
+let headers = new Headers()
+headers.append('Content-Type', 'text/xml; charset=utf-8')
+const sitemapXML = await fetch(getCanonical() + "sitemap-0.xml", headers).then((res) => res.text())
+console.log(sitemapXML)
+const sitemapJSON = await xml2js.parseStringPromise(sitemapXML)
+const urls = sitemapJSON.urlset.url.map((u) => u.loc[0])
+---
+
+<Layout {meta}>
+  <section class="py-8 sm:py-16 lg:py-20 mx-auto">
+    <article>
+      <header>
+        <h1 class="px-4 sm:px-6 max-w-4xl mx-auto text-center text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
+          Site Map
+        </h1>
+      </header>
+      <div class="container mx-auto px-6 sm:px-6 max-w-4xl md:max-w-3xl prose dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg mt-8">
+        <ul>
+          {
+            urls.map((url) => (
+              <li>
+                <a href={url}>{url}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <Previous />
+
+      <section class="grid grid-cols-1 bg-primary-50"></section>
+    </article>
+  </section>
+</Layout>

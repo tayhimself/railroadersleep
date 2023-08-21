@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon"
-import { getHomePermalink } from "~/utils/permalinks"
+import { getHomePermalink, getPermalink } from "~/utils/permalinks"
 ---
 
 <footer class="border-t border-gray-200 dark:border-slate-800">
@@ -10,70 +10,29 @@ import { getHomePermalink } from "~/utils/permalinks"
         <div class="mb-2">
           <a class="inline-block font-bold text-lg" href={getHomePermalink()}>Railroaders' Guide to Heallthy Sleep</a>
         </div>
-        <div class="text-sm text-gray-600">
-          <a
-            class="text-gray-600 hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
-            href="#">Terms</a
-          > ·
-          <a
-            class="text-gray-600 hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
-            href="#">Privacy Policy</a
-          >
+        <div class="text-gray-600">
+          <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href={getPermalink("sitemap")}>Sitemap</a> ·
+          <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out" href="https://railroadersleep.fra.dot.gov/Privacy-Policy">Privacy Policy</a>
         </div>
       </div>
       <div class="col-span-6 md:col-span-3 lg:col-span-2">
-        <div class="text-gray-800 dark:text-gray-300 font-medium mb-2">Product</div>
-        <ul class="text-sm">
+        <ul class="">
           <li class="mb-2">
-            <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 transition duration-150 ease-in-out" href="#"
-              >Features</a
-            >
-          </li>
-          <li class="mb-2">
-            <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 transition duration-150 ease-in-out" href="#"
-              >Team</a
-            >
-          </li>
-          <li class="mb-2">
-            <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 transition duration-150 ease-in-out" href="#"
-              >Resources</a
-            >
+            <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 transition duration-150 ease-in-out" href={getPermalink("credits")}>Credits</a>
           </li>
         </ul>
       </div>
       <div class="col-span-6 md:col-span-3 lg:col-span-2">
-        <div class="text-gray-800 dark:text-gray-300 font-medium mb-2">Support</div>
-        <ul class="text-sm">
+        <ul class="">
           <li class="mb-2">
-            <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 transition duration-150 ease-in-out" href="#"
-              >Docs</a
-            >
-          </li>
-          <li class="mb-2">
-            <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 transition duration-150 ease-in-out" href="#"
-              >Status</a
-            >
+            <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 transition duration-150 ease-in-out" href={getPermalink("about")}>About</a>
           </li>
         </ul>
       </div>
       <div class="col-span-6 md:col-span-3 lg:col-span-2">
-        <div class="text-gray-800 dark:text-gray-300 font-medium mb-2">Company</div>
         <ul class="text-sm">
           <li class="mb-2">
-            <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 transition duration-150 ease-in-out" href="#"
-              >About</a
-            >
-          </li>
-
-          <li class="mb-2">
-            <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 transition duration-150 ease-in-out" href="#"
-              >Inclusion</a
-            >
-          </li>
-          <li class="mb-2">
-            <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 transition duration-150 ease-in-out" href="#"
-              >Social Impact</a
-            >
+            <a class="text-gray-600 hover:text-gray-700 dark:text-gray-400 transition duration-150 ease-in-out" href={getPermalink("faq")}>FAQ</a>
           </li>
         </ul>
       </div>

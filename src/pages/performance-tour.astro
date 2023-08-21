@@ -3,26 +3,25 @@ import Layout from "~/layouts/BlogLayout.astro";
 import TourCards from "~/components/blog/TourCards.astro";
 import TourModal from "~/components/widgets/TourModal.astro";
 import { fetchPosts, fetchPostsByFeature } from "~/utils/posts";
+import { getPermalink } from "~/utils/permalinks";
 const posts = await fetchPostsByFeature("Performance");
 const {} = Astro.props;
 ---
 
 <Layout>
+  <Fragment slot="title">
+    On Track for Success
+	</Fragment>
 	<div
 		class="container mx-auto px-4 max-w-4xl prose dark:prose-invert dark:prose-headings:text-slate-300 prose-lg prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg mt-8 mb-12  show-toast-on-scroll"
 	>
 		<article>
-			<h1
-				class="px-4 mb-0 max-w-3xl mx-auto text-center text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
-			>
-				On Track for Success
-			</h1>
 
       <h2 class="px-4 mt-2 mb-8 max-w-3xl mx-auto text-center text-2xl md:text-3xl font-bold leading-tighter tracking-tighter font-heading">
         Lifestyle Tips for High-Performing Railroaders
       </h2>
 			<div
-				class="container mx-auto px-6 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg mt-8"
+				class="container mx-auto sm:px-4 md:max-w-4xl prose lg:prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg mt-8"
 			>
 				<p>
 					Manage your sleep, naps, caffeine, and exercise to stay awake, alert, and confident on the job.
@@ -34,7 +33,7 @@ const {} = Astro.props;
   <div class="toast toast-top my-24 hidden animate-in slide-in-from-bottom duration-500" id="caffeine-toast">
 		<div class="alert alert-info">
 			<div>
-				Take the <a href="caffeine-interactive/" class="link">Caffeine Challenge!</a>
+				Take the <a href={getPermalink("caffeine-interactive")} class="link">Caffeine Challenge!</a>
 			</div>
 		</div>
 	</div>
