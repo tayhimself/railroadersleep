@@ -21,18 +21,31 @@ Harvard Medical School, Division of Sleep Medicine
 
 #### Researchers, Physicians, and Sleep Professionals Interviewed
 Stephen A. Amira, PhD, Harvard Medical School
+
 Orfeu M. Buxton, PhD, formerly of Harvard Medical School
+
 Daniel A. Cohen MD, MMSc, formerly of Harvard Medical School
+
 Charles A. Czeisler, PhD, MD, FRCP, Harvard Medical School
+
 Dennis Dean, PhD, formerly of Harvard Medical School
+
 Marie Dumont, PhD, Université de Montréal
+
 Charmane Eastman, PhD, Rush University Medical Center
+
 Lawrence J. Epstein, MD, Harvard Medical School
+
 Christopher Landrigan, MD, MPH, Harvard Medical School
+
 Janet Mullington, PhD, Harvard Medical School
+
 Andrew J. K. Phillips, PhD, formerly of Harvard Medical School
+
 Stuart F. Quan, MD, Harvard Medical School
+
 Ann E. Rogers, PhD, RN, FAAN, Emory University School of Medicine
+
 Robert Stickgold, PhD, Harvard Medical School
 
 #### Special Thanks
