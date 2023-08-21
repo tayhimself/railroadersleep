@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
+import { getPermalink } from '~/utils/permalinks';
 
 const items = [
 	[
@@ -57,7 +58,7 @@ const items = [
   <div class="mt-6 mx-auto text-center">
     <a
       class="btn text-white bg-primary-600 hover:bg-primary-800 mb-4 sm:mb-0"
-      href="https://github.com/onwidget/astrowind"
+      href={getPermalink('faq')}
       target="_blank"
       rel="noopener"
     >
