@@ -73,7 +73,7 @@ A: Only you. Any information you enter is automatically deleted when your sessio
 
 **Q. Who can find out when I read RailroaderSleep.org, or what pages I visit?**
 
-**A.** Only you. You may access the site assured of your privacy. You can read the full Privacy Policy here.
+**A.** Only you. You may access the site assured of your privacy. You can read the full [Privacy Policy here](https://railroadersleep.fra.dot.gov/Privacy-Policy).
 
 **Q. What can I do to help railroaders I know find out about this site?**
 
