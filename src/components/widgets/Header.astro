@@ -14,12 +14,12 @@ posts.map((post) => {
 });
 
 const interactives = new Set<Interactive>();
-interactives.add({ name: 'Audio Slide Show', link: getPermalink('audio-slide-show') });
-interactives.add({ name: 'Inside Apnea', link: getPermalink('inside-apnea') });
-interactives.add({ name: 'Circadian Rythms', link: getPermalink('circadian') });
-interactives.add({ name: 'Reaction Time', link: getPermalink('think-fast') });
-interactives.add({ name: 'Sleep Lab', link: getPermalink('sleep-lab') });
 interactives.add({ name: 'Caffeine', link: getPermalink('caffeine-interactive') });
+interactives.add({ name: 'Inside Apnea', link: getPermalink('inside-apnea') });
+interactives.add({ name: 'Reaction Time', link: getPermalink('think-fast') });
+interactives.add({ name: 'Audio Slide Show', link: getPermalink('audio-slide-show') });
+interactives.add({ name: 'Circadian Rythms', link: getPermalink('circadian') });
+interactives.add({ name: 'Sleep Lab', link: getPermalink('sleep-lab') });
 
 interface Interactive {
   name: string;

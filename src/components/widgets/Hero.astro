@@ -3,14 +3,14 @@ import { Icon } from "astro-icon";
 import { Image, Picture } from "@astrojs/image/components";
 ---
 
-<section class="flex flex-col h-[20em] md:h-[28em] lg:h-[36em]">
+<section class="flex flex-col h-[20em] md:h-[26em] lg:h-[32em]">
 	<div class="relative h-full w-full">
 		<Picture
 			src={import("~/assets/images/railroad-worker.jpg")}
-			class="bg-gray-400 dark:bg-slate-700 w-full object-cover h-full absolute top-0"
+			class="bg-gray-400 dark:bg-slate-700 w-full object-cover object-top h-full absolute top-0"
 			widths={[900, 1200, 1600]}
-			sizes=" (max-width: 1600px) 900px, 1200px, 1600px"
-      aspectRatio={16/9}
+			sizes=" (max-width: 1200px) 100vw, 900px, 1200px"
+      aspectRatio={499/333}
 			alt="Hero Image"
 		/>
 

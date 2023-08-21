@@ -6,14 +6,14 @@ const { quote, quote_author, class: className = "text-sm" } = Astro.props;
 {
 	quote && quote_author && (
     <div class="px-4" >
-			<blockquote class="flex flex-row">
+			<div class="flex flex-row">
 				<Icon
 					name="mdi:format-quote-open"
 					class="w-16 h-16 text-gray-400 flex-none"
 				/>
 				<p class="text-lg grow">{quote}</p>
-			</blockquote>
-			<div class="text-base text-right"> - {quote_author}</div>
+			</div>
+			<div class="text-base text-right -mt-2 mb-2"> - {quote_author}</div>
     </div>
 	)
 }
