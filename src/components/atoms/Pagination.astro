@@ -9,7 +9,7 @@ const { prevUrl, nextUrl, prevText = 'Previous', nextText = 'Next' } = Astro.pro
 			<div class="flex flex-row mx-auto container justify-evenly">
 				<a
 					href={prevUrl}
-					class={`btn px-2 font-medium text-gray-300 hover:text-white shadow-none mr-2
+					class={`btn btn-primary px-2 font-medium text-gray-300 hover:text-white shadow-none mr-2
       ${!prevUrl ? 'invisible' : ''}`}
 				>
 					<div class="flex flex-row align-middle">
@@ -19,7 +19,7 @@ const { prevUrl, nextUrl, prevText = 'Previous', nextText = 'Next' } = Astro.pro
 				</a>
 				<a
 					href={nextUrl}
-					class={`btn px-2 font-medium text-gray-300 hover:text-white shadow-none ${
+					class={`btn px-2 btn-primary font-medium text-gray-300 hover:text-white shadow-none ${
 						!nextUrl ? 'invisible' : ''
 					}`}
 				>

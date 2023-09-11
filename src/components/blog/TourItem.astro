@@ -7,7 +7,7 @@ const { post } = Astro.props;
 
 const image = await findImage(post.image);
 ---
-<div class="card xl:w-full h-48 lg:h-64 grid grid-cols-2 grid-rows-1 gap-2 md:gap-4 bg-base-200 rounded-xl shadow-xl animate-in slide-in-from-bottom duration-500 hover:shadow-xl hover:scale-115 transform hover:translate-y-1 hover:translate-x-1 hover:z-10">
+<div class="card xl:w-full h-48 lg:h-64 grid grid-cols-2 grid-rows-1 gap-2 md:gap-4 bg-base-200 dark:bg rounded-xl shadow-xl animate-in slide-in-from-bottom duration-500 hover:shadow-xl hover:scale-115 transform hover:translate-y-1 hover:translate-x-1 hover:z-10">
   <label for={post.slug} class="relative cursor-pointer">
 
     <div class="overflow-hidden">

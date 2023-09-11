@@ -6,7 +6,7 @@ const { item } = Astro.props;
 const image = await findImage(item.image);
 
 ---
-<article class="max-w-md mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 my-8 lg:my-12">
+<article class="max-w-md mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 my-8 lg:my-12 items-center">
 	<a class="relative block group" href={item.link}>
 		<div
 			class="relative h-0 pb-[56.25%] md:pb-[75%] md:h-72 lg:pb-[56.25%] overflow-hidden rounded shadow-lg"
@@ -30,7 +30,7 @@ const image = await findImage(item.image);
 					{item.title}
 				</a>
 			</h2>
-      <p class="text-gray-600 text-sm sm:text-base mb-4">{item.description}</p>
+      <p class="text-sm sm:text-base mb-4">{item.description}</p>
 		</header>
 
 		<footer class="mt-4">
