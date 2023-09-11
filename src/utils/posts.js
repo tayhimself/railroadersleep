@@ -66,7 +66,7 @@ export const fetchPosts = async () => {
 };
 
 /**
- * @param {string} section name
+ * @param {string|null} section name of the section to filter by or null
  */
 export const fetchCategories = async (section) => {
 	const categories = import.meta.glob(
@@ -81,8 +81,7 @@ export const fetchCategories = async (section) => {
 	});
 	// now filter out the ones that don't have a category after normalization
 	const results = (await Promise.all(normalizedCategories))
-		.filter((post) => post.category)
-		.filter((post) => post.section === section);
+		.filter((post) => post.category && (!section || post.section === section));
 	return results;
 };
 

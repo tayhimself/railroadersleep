@@ -52,12 +52,12 @@ const image = await findImage(post.image);
 		</header>
 
     {!post.video_title && !post.video_description && (
-		<p class="text-md sm:text-lg flex-grow">
-			{post.excerpt || post.description.substring(0, 100)}...
+		<p class="text-md lg:text-lg flex-grow">
+			{post.excerpt || post.description.substring(0, 120)}...
 		</p>
     )}
     {post.video_description && (
-      <p class="text-md sm:text-lg flex-grow">{post.description}</p>
+      <p class="text-md lg:text-lg flex-grow">{post.description.substring(0,144)} ...</p>
     )}
 		<footer class="mt-4">
 			<div>

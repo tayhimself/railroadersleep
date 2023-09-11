@@ -10,10 +10,8 @@ import { fetchPosts, fetchPostsWithVideos } from '~/utils/posts';
 import { getCanonical, getPermalink, VIDEO_BASE } from '~/utils/permalinks';
 
 
-const posts = await fetchPostsWithVideos();
 export async function getStaticPaths({ paginate}) {
 	const posts = await fetchPostsWithVideos();
-
 	return paginate(posts, {
 		pageSize: BLOG.postsPerPage,
 	});

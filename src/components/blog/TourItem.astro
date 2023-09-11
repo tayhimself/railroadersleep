@@ -41,16 +41,16 @@ const image = await findImage(post.image);
   <div class="p-2 lg:p-4">
     <label for={post.slug} class="cursor-pointer">
     <header>
-      <h2 class="text-lg sm:text-xl font-bold leading-snug mb-2 font-heading">
+      <h2 class="text-md sm:text-lg font-bold leading-snug mb-2 font-heading">
         {post.title}
       </h2>
     </header>
     {
       !post.video_title && !post.video_description && (
-        <p class="text-md flex-grow">{post.excerpt || post.description.substring(0, 120)}...</p>
+        <p class="flex-grow">{post.excerpt || post.description.substring(0, 120)}...</p>
       )
     }
-    {post.video_description && <p class="text-md flex-grow">{post.description.substring(0, 120)}...</p>}
+    {post.video_description && <p class="text-md lg:text-lg flex-grow">{post.description.substring(0, 144)} ...</p>}
     <footer class="mt-2">
       <div>
         <span class="text-sm text-opacity-70">
