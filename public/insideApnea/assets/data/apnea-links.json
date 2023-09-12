@@ -1,5 +1,5 @@
 {
-  "understanding": "https://sleep.hms.harvard.edu/node/63236/",
-  "diagnosing": " https://sleep.hms.harvard.edu/node/72931/",
-  "treating": "https://sleep.hms.harvard.edu/node/72956/"
+  "understanding": "../apnea-tour#living-with-osa",
+  "diagnosing": "../apnea-tour#getting-a-diagnosis",
+  "treating": "../apnea-tour#available-treatments"
 }

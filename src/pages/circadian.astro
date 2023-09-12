@@ -1,17 +1,23 @@
 ---
-import { SITE } from "~/config.mjs";
-import { getCanonical, getHomePermalink } from "~/utils/permalinks";
+import { SITE } from "~/config.mjs"
+import { getCanonical, getHomePermalink } from "~/utils/permalinks"
 
-import Layout from "~/layouts/BlogLayout.astro";
+import Layout from "~/layouts/BlogLayout.astro"
 const meta = {
-	title: SITE.title,
-	description: SITE.description,
-	canonical: getCanonical(getHomePermalink()),
-};
+  title: SITE.title,
+  description: SITE.description,
+  canonical: getCanonical(getHomePermalink()),
+}
 ---
 
 <Layout {meta}>
-  <div class="h-[70vh] md:my-auto">
+  <h3 class="text-2xl font-bold text-center p-2">Circadian Rythms</h3>
+
+  <p class="prose max-w-2xl mx-auto p-2">Finding sleep impossible even when you have the chance can be extremely frustrating, but this scenario is common among people who have jet lag or do shift work.</p>
+  <p class="prose max-w-2xl mx-auto p-2">Under normal conditions, two systems inside the body interact to allow us to sleep and remain alert when we want to.</p>
+  <p class="prose max-w-2xl mx-auto p-2">Understanding what happens when these two systems fall out of synch is an important step to achieving quality sleep even if you travel or work the night shift.</p>
+  <p class="prose max-w-2xl mx-auto p-2">Click on the interactive activity below to learn how sleep and wakefulness are regulated throughout the day.</p>
+  <div class="h-[60vh] md:my-auto">
     <span style="font-family:'Avenir Black'"></span>
     <span style="font-family:'Avenir Book'"></span>
     <span style="font-family:'Avenir Heavy'"></span>
@@ -23,30 +29,30 @@ const meta = {
 </Layout>
 
 <script>
-	window.circadian = {
-		isIntro: true,
-		/**
-		 * The root path that contains all assets for the app. Make sure the path ends with a slash.
-		 */
-		basePath: "../circadian/",
+  window.circadian = {
+    isIntro: true,
+    /**
+     * The root path that contains all assets for the app. Make sure the path ends with a slash.
+     */
+    basePath: "../circadian/",
 
-		assetsPath: "assets/",
+    assetsPath: "assets/",
 
-		/**
-		 * Provides support for CORS, defining how the element handles crossorigin requests,
-		 * thereby enabling the configuration of the CORS requests for the element's fetched data.
-		 *
-		 * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
-		 * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-		 */
-		crossOrigin: "",
+    /**
+     * Provides support for CORS, defining how the element handles crossorigin requests,
+     * thereby enabling the configuration of the CORS requests for the element's fetched data.
+     *
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin
+     * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+     */
+    crossOrigin: "",
 
-		/**
-		 * The root path that contains all assets for the profiles app.
-		 * This is expected to be a folder that exists inside the root path.
-		 * Make sure the path ends with a slash.
-		 */
-		videosPath: "videos/",
-	};
+    /**
+     * The root path that contains all assets for the profiles app.
+     * This is expected to be a folder that exists inside the root path.
+     * Make sure the path ends with a slash.
+     */
+    videosPath: "videos/",
+  }
 </script>
 <script src="../circadian/bundle.js" defer></script>
