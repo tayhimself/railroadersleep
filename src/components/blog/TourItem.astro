@@ -50,7 +50,7 @@ const image = await findImage(post.image);
         <p class="flex-grow">{post.excerpt || post.description.substring(0, 120)}...</p>
       )
     }
-    {post.video_description && <p class="text-md lg:text-lg flex-grow">{post.description.substring(0, 144)} ...</p>}
+    {post.video_description && <p class="flex-grow">{post.description.substring(0, 144)}...</p>}
     <footer class="mt-2">
       <div>
         <span class="text-sm text-opacity-70">
